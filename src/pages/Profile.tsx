@@ -3,6 +3,7 @@ import React from 'react';
 import Contact from '../components/container/contact/Contact';
 import Friends from '../components/container/friends/Friends';
 import Information from '../components/container/information/information';
+import Picture from '../components/container/Picture/Picture';
 import Header from '../components/header/header';
 import './profile.css'
 
@@ -13,6 +14,7 @@ const Profile = () => {
             <Information/>
             <Contact/>
             <Friends/>
+            <Picture/>
         </div>
     );
 };

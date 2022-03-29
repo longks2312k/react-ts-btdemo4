@@ -1,5 +1,5 @@
 .friend {
-    height: 760px;
+    min-height: 760px;
     background-color: #fff;
     margin-bottom: 20px;
     margin: 20px 120px 20px 120px;
@@ -7,4 +7,35 @@
     -webkit-box-shadow: 0 4px 3px -3px #333;
     -moz-box-shadow: 0 4px 3px -3px #333;
     box-shadow: 0 4px 3px -3px #333;
+}
+.friend-Title {
+    flex: 1;
+    padding: 15px 0 15px 25px;
+    display: flex;
+}
+.list-item{
+    height: 340px;
+    margin: 0 25px;
+    display: flex;
+}
+.friend-item{
+    flex: 1;
+    margin: 12.5px 12.5px;
+    border-radius: 5px;
+    display: table-footer-group;
+    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
+    box-shadow: 6px -142px 125px 0px rgba(0,0,0,0.69) inset;
+    -webkit-box-shadow: 6px -142px 125px 0px rgba(0,0,0,0.69) inset;
+    -moz-box-shadow: 6px -142px 125px 0px rgba(0,0,0,0.69) inset;
+}
+.friend-name{
+    flex: 1;
+    font-size: 22px;
+    margin-top: 270px;
+    margin-left: 15px;
+    color: #fff;
+    font-weight: 400;
+}
+.margin-top{
+    flex: 8;
 }
