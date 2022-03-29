@@ -1,6 +1,10 @@
-.friend{
+.friend {
     height: 760px;
     background-color: #fff;
-    margin: 20px 110px 20px 110px;
+    margin-bottom: 20px;
+    margin: 20px 120px 20px 120px;
     border-radius: 5px;
+    -webkit-box-shadow: 0 4px 3px -3px #333;
+    -moz-box-shadow: 0 4px 3px -3px #333;
+    box-shadow: 0 4px 3px -3px #333;
 }
