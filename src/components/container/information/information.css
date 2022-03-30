@@ -1,7 +1,79 @@
 .info{
     background-color: rgb(49 62 114);
-    min-height: 270px;
+    min-height: 260px;
     margin: 0 50px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    display: flex;
+
+}
+.info-avatar{
+    width: 65%;
+    padding: 50px 0 0 70px;
+    display: flex;
+}
+.avatar-img{
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+}
+.profile-name{
+    margin-left: 20px;
+}
+.name{
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 10px;
+    color: white;
+}
+.from{
+    font-size: 18px;
+    font-weight: 200;
+    margin-top: -15px;
+    color: rgba(256, 256, 256, 0.6);
+}
+.info-item{
+    width: 32%;
+}
+.like-follow{
+    height: 30%;
+    margin-top: 60px;
+    display: flex;
+}
+.center{
+    margin-top: 20px;
+}
+h3{
+    font-size: 14px;
+    color: white;
+    margin-bottom: -1px;
+    margin-left: 30px;
+}
+.follower{
+    font-size: 14px;
+    color: rgb(250, 250, 250,0.5);
+    font-weight: 400;
+    margin-left: 20px;
+}
+.following{
+    font-size: 14px;
+    color: rgb(250, 250, 250,0.5);
+    font-weight: 400;
+    margin-left: 16px;
+}
+.friends{
+    font-size: 14px;
+    color: rgb(250, 250, 250,0.5);
+    font-weight: 400;
+    margin-left: 24px;
+}
+.info-tab-bar{
+    height: 25%;
+    margin-top: 2%;
+    margin-right: 35px;
+}
+.tab-bar-style{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(256, 256, 256, 0.6);
 }
