@@ -1,41 +1,74 @@
 .friend {
     min-height: 760px;
     background-color: #fff;
-    margin-bottom: 20px;
+    padding-bottom: 15px;
     margin: 20px 120px 20px 120px;
     border-radius: 5px;
-    -webkit-box-shadow: 0 4px 3px -3px #333;
-    -moz-box-shadow: 0 4px 3px -3px #333;
-    box-shadow: 0 4px 3px -3px #333;
+    box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
+    -webkit-box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
+    -moz-box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
 }
 .friend-Title {
     flex: 1;
     padding: 15px 0 15px 25px;
     display: flex;
+    
 }
 .list-item{
-    height: 340px;
-    margin: 0 25px;
-    display: flex;
+    flex: 1;
+    margin: 0 15px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .friend-item{
     flex: 1;
-    margin: 12.5px 12.5px;
+    margin: 10px 10px;
     border-radius: 5px;
-    display: table-footer-group;
-    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
     box-shadow: 6px -142px 125px 0px rgba(0,0,0,0.69) inset;
     -webkit-box-shadow: 6px -142px 125px 0px rgba(0,0,0,0.69) inset;
     -moz-box-shadow: 6px -142px 125px 0px rgba(0,0,0,0.69) inset;
 }
+.image-1{
+    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
+}
+.image-2{
+    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
+}
+.image-3{
+    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
+}
+.image-4{
+    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
+}
+.image-5{
+    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
+}
+.image-6{
+    background-image: url("https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg");
+}
 .friend-name{
     flex: 1;
     font-size: 22px;
-    margin-top: 270px;
+    margin-top: 240px;
     margin-left: 15px;
     color: #fff;
     font-weight: 400;
 }
 .margin-top{
-    flex: 8;
+    flex: 1;
+}
+.item-tick{
+    height: 13px;
+    width: 13px;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 1px;
+    margin-left: 300px;
+    margin-top: 10px;
+}
+.item-tick-is{
+    background-color: yellowgreen;
+    height: 11px;
+    width: 11px;
+    border-radius: 6px;
 }

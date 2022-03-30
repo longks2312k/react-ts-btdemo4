@@ -1,3 +1,4 @@
+import { Col, Row } from 'antd';
 import React from 'react';
 import './Friends.css'
 
@@ -7,34 +8,58 @@ const Friends = () => {
             <div className="friend-Title">
                 <h2>Friends</h2>
             </div>
-            <div className='list-item'>
-                <div className='friend-item'>
-                    <div className='margin-top'></div>
+            <Row className='list-item'>
+                <Col className='friend-item image-1'>
+                    <div className='margin-top'>
+                        <div className='item-tick'>
+                            <div className='item-tick-is'></div>
+                        </div>
+                    </div>
                     <p className='friend-name'>Annie</p>
-                </div>
-                <div className='friend-item'>
-                    <div className='margin-top'></div>
+                </Col>
+                <Col className='friend-item image-2'>
+                    <div className='margin-top'>
+                        <div className='item-tick'>
+                            <div className='item-tick-is'></div>
+                        </div>
+                    </div>
                     <p className='friend-name'>Lisa</p>
-                </div>
-                <div className='friend-item'>
-                    <div className='margin-top'></div>
+                </Col>
+                <Col className='friend-item image-3'>
+                    <div className='margin-top'>
+                        <div className='item-tick'>
+                            <div className='item-tick-is'></div>
+                        </div>
+                    </div>
                     <p className='friend-name'>Mai</p>
-                </div>
-            </div>
-            <div className='list-item'>
-                <div className='friend-item'>
-                    <div className='margin-top'></div>
+                </Col>
+            </Row>
+            <Row className='list-item'>
+                <Col className='friend-item image-4'>
+                    <div className='margin-top'>
+                        <div className='item-tick'>
+                            <div className='item-tick-is'></div>
+                        </div>
+                    </div>
                     <p className='friend-name'>Yam</p>
-                </div>
-                <div className='friend-item'>
-                    <div className='margin-top'></div>
+                </Col>
+                <Col className='friend-item image-5'>
+                    <div className='margin-top'>
+                        <div className='item-tick'>
+                            <div className='item-tick-is'></div>
+                        </div>
+                    </div>
                     <p className='friend-name'>Jinx</p>
-                </div>
-                <div className='friend-item'>
-                    <div className='margin-top'></div>
+                </Col>
+                <Col className='friend-item image-6'>
+                    <div className='margin-top'>
+                        <div className='item-tick'>
+                            <div className='item-tick-is'></div>
+                        </div>
+                    </div>
                     <p className='friend-name'>Linda</p>
-                </div>
-            </div>
+                </Col>
+            </Row>
         </div>
     );
 };
