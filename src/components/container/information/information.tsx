@@ -18,17 +18,17 @@ const Information = () => {
                 <div className='like-follow'>
                     <div style={{flex:1}}></div>
                     <div style={{flex:1}} className='center'>
-                        <h3>2k+</h3>
+                        <h3 className='info-h3'>2k+</h3>
                         <p className='follower'>Follower</p>
                     </div>
                     <div style={{backgroundColor:'rgb(207, 199, 199, 0.5)',width:'1.2px',marginTop:'10px'}}></div>
                     <div style={{flex:1}} className='center'>
-                        <h3>117</h3>
+                        <h3 className='info-h3'>117</h3>
                         <p className='following'>Following</p>
                     </div>
                     <div style={{backgroundColor:'rgb(207, 199, 199, 0.5)',width:'1.2px',marginTop:'10px'}}></div>
                     <div style={{flex:1}} className='center'>
-                        <h3>327</h3>
+                        <h3 className='info-h3'>327</h3>
                         <p className='friends'>Friends</p>
                     </div>
                 </div>
