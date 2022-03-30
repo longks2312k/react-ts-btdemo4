@@ -1,5 +1,6 @@
 import { Button } from 'antd';
 import React from 'react';
+import About from '../components/container/About/About';
 import Biography from '../components/container/biography/Biography';
 import Contact from '../components/container/contact/Contact';
 import Friends from '../components/container/friends/Friends';
@@ -17,6 +18,7 @@ const Profile = () => {
             <Contact/>
             <Friends/>
             <Picture/>
+            <About/>
             <Biography/>
             <Footer/>
         </div>
