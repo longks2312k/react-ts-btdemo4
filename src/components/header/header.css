@@ -1,12 +1,41 @@
 .header{
-    height: 180px;
+    height: 170px;
 }
 .header-container{
-    height: 135px;
-    background-color: aquamarine;
+    height: 120px;
+    padding: 0 110px;
+    display: flex;
+}
+.header-container-left{
+    display: flex;
+    width: 70%;
+    padding: 50px 0 10px 0;
+}
+.header-container-logo{
+    width: 20%;
+    padding: 10px;
+}
+.header-container-input{
+    width: 80%;
+    padding: 10px;
+}
+.header-input{
+    padding: 9px;
+    height: 48px;
+    width: 50%;
+    border-bottom-left-radius: 23px;
+    border-top-left-radius: 23px;
+}
+.header-cas-btn{
+    padding: 10px;
+    height: 48px;
+    width: 25%;
+    font-weight: 500;
+    border-bottom-right-radius: 23px;
+    border-top-right-radius: 23px;
 }
 .header-menu{
-    height: 45px;
+    height: 50px;
     padding: 0 110px;
     font-size: 14px;
 }

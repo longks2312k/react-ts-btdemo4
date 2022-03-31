@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import "./header.css";
-import { Menu } from "antd";
-import { TeamOutlined, DollarOutlined, AuditOutlined, DingdingOutlined, RiseOutlined, WindowsOutlined, CaretDownOutlined, CheckCircleFilled, MailFilled, DollarCircleFilled, PieChartFilled, WindowsFilled, AndroidFilled, MessageFilled, HddFilled, MehFilled } from "@ant-design/icons";
+import { Button, Dropdown, Input, Menu } from "antd";
+import { TeamOutlined, DollarOutlined, AuditOutlined, DingdingOutlined, RiseOutlined, WindowsOutlined, CaretDownOutlined, CheckCircleFilled, MailFilled, DollarCircleFilled, PieChartFilled, WindowsFilled, AndroidFilled, MessageFilled, HddFilled, MehFilled, SearchOutlined } from "@ant-design/icons";
+import { click } from "@testing-library/user-event/dist/click";
 
 const { SubMenu } = Menu;
 
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+        1st menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+        2nd menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        3rd menu item
+      </a>
+    </Menu.Item>
+  </Menu>
+);
+
 const Header = () => {
-  const [current, setCurrent] = useState("mail");
+  //const [current, setCurrent] = useState("mail");
   // handleClick = e => {
   //   setCurrent(e.key);
   // };
@@ -14,11 +35,21 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-container">
-        
+        <div className="header-container-left">
+          <div className="header-container-logo">
+            <img src="https://jumbo.g-axon.work/images/logo.png" alt="" />
+          </div>
+          <div className="header-container-input">
+            <Input className="header-input" type="textarea" allowClear={true} size="large" placeholder="Search here..." prefix={<SearchOutlined />}></Input>
+            <Dropdown className="header-cas-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
+              <Button>CATEGORIES</Button>
+            </Dropdown>
+          </div>
+        </div>
       </div>
       <Menu
         // onClick={handleClick(e.key)}
-        selectedKeys={[current]}
+        //selectedKeys={[current]}
         mode="horizontal"
         theme="dark"
         className="header-menu"
