@@ -1,8 +1,8 @@
-import { Button } from 'antd';
 import React from 'react';
 import About from '../components/container/About/About';
 import Biography from '../components/container/biography/Biography';
 import Contact from '../components/container/contact/Contact';
+import Events from '../components/container/Events/Events';
 import Friends from '../components/container/friends/Friends';
 import Information from '../components/container/information/information';
 import Picture from '../components/container/Picture/Picture';
@@ -20,6 +20,7 @@ const Profile = () => {
             <Picture/>
             <About/>
             <Biography/>
+            <Events/>
             <Footer/>
         </div>
     );

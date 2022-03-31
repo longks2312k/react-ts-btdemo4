@@ -1,0 +1,81 @@
+.events{
+    background-color: #fff;
+    padding-bottom: 15px;
+    margin: 20px 120px 20px 120px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
+    -webkit-box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
+    -moz-box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
+}
+.event-title{
+    padding: 15px 0 0 25px;
+}
+.event-little-title{
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 0 0 25px;
+    color: rgba(33, 33, 33, 0.6);
+}
+.event-item{
+    padding: 10px 25px;
+    display: flex;
+}
+.event-img{
+    width: 20%;
+    margin: 0 20px 0 0;
+    border-radius: 5px;
+}
+.event-info{
+    width: 62%;
+}
+.event-type{
+    background-color: rgb(232 239 250);
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+}
+.event-type-title{
+    font-size: 14px;
+    font-weight: 500;
+    color: #1c61ca;
+}
+.event-location{
+    display: flex;
+}
+.event-location-title{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 0 0 15px;
+    color: rgba(33, 33, 33, 0.6);
+}
+.event-time{
+    width: 18%;
+}
+.flex-ev{
+    height: 30%;
+    display: flex;
+}
+.event-date{
+    font-size: 20px;
+    color: red;
+    margin-right: 10px;
+}
+.date-p{
+    color: red;
+    font-weight: 500;
+}
+.btn-check{
+    color: #1c61ca;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.check-p{
+    font-size: 16px;
+    color: #1c61ca;
+    font-weight: 500;
+}
+.under-line{
+    height: 1.2px;
+    background-color: rgb(240 240 240);
+    margin: 5px 30px;
+}
