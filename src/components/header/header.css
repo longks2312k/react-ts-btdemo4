@@ -1,5 +1,5 @@
 .header{
-    height: 170px;
+    height: 165px;
 }
 .header-container{
     height: 120px;
@@ -34,8 +34,46 @@
     border-bottom-right-radius: 23px;
     border-top-right-radius: 23px;
 }
+.header-container-right{
+    width: 30%;
+}
+.header-login{
+    height: 40%;
+    display: flex;
+    padding-top: 10px;
+}
+.login-div1{
+    flex: 2;
+}
+.login-div2{
+}
+.login-div3{
+    flex: 1;
+}
+.btn-login{
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    
+}
+.btn-sign-up{
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.div-4{
+    width: 1.5px;
+    height: 16px;
+    background-color: rgba(122, 122, 122, 0.733);
+    margin-top: 8px;
+}
+.text-btn{
+    font-weight: 500;
+    font-size: 15px;
+}
 .header-menu{
-    height: 50px;
+    height: 45px;
+    background-color: rgb(63 81 181) !important;
     padding: 0 110px;
-    font-size: 14px;
+    font-size: 15px;
 }

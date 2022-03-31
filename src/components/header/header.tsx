@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 import { Button, Dropdown, Input, Menu } from "antd";
 import { TeamOutlined, DollarOutlined, AuditOutlined, DingdingOutlined, RiseOutlined, WindowsOutlined, CaretDownOutlined, CheckCircleFilled, MailFilled, DollarCircleFilled, PieChartFilled, WindowsFilled, AndroidFilled, MessageFilled, HddFilled, MehFilled, SearchOutlined } from "@ant-design/icons";
-import { click } from "@testing-library/user-event/dist/click";
+// import { click } from "@testing-library/user-event/dist/click";
 
 const { SubMenu } = Menu;
 
@@ -44,6 +44,22 @@ const Header = () => {
             <Dropdown className="header-cas-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
               <Button>CATEGORIES</Button>
             </Dropdown>
+          </div>
+        </div>
+        <div className="header-container-right">
+          <div className="header-login">
+            <div className="login-div1"></div>
+            <div className="login-div2">
+              <Button type="text" className="btn-login">
+                <p className="text-btn">LOGIN</p>
+              </Button>
+            </div>
+            <div className="div-4"></div>
+            <div className="login-div3">
+              <Button type="text" className="btn-sign-up">
+                <p className="text-btn">SIGN UP</p>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
