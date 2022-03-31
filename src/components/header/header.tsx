@@ -72,13 +72,13 @@ const Header = () => {
               <Button className="btn" type="text" icon={<BellFilled style={{fontSize:'22px'}} />}></Button>
             </Dropdown>
             <Dropdown className="header-language-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
-              <Button className="btn" type="text">
+              <Button className="btn btn-2" type="text">
                 <img className="img-language" src="https://jumbo.g-axon.work/images/flag/icons8-usa.png" alt="" />
               </Button>
             </Dropdown>
             <Dropdown className="header-logout-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
-              <Button className="btn" type="text">
-              <img className="img-logout" src="https://toigingiuvedep.vn/wp-content/uploads/2021/01/hinh-anh-girl-xinh-toc-ngan-de-thuong.jpg" alt="" />  
+              <Button className="btn btn-2" type="text">
+                <img className="img-logout" src="https://toigingiuvedep.vn/wp-content/uploads/2021/01/hinh-anh-girl-xinh-toc-ngan-de-thuong.jpg" alt="" />  
               </Button>
             </Dropdown>
           </div>

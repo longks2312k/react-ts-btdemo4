@@ -76,6 +76,7 @@
 }
 .header-combo-btn{
     height: 60%;
+    padding-left: 30px;
     display: flex;
     padding-top: 12px;
 }
@@ -83,6 +84,9 @@
     height: 50px;
     width: 50px;
     border-radius: 25px;
+}
+.btn-2{
+    padding: 0 10px 0 10px;
 }
 .header-item-btn{
     flex: 1;
