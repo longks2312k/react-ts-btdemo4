@@ -46,17 +46,20 @@
     flex: 2;
 }
 .login-div2{
+    flex: 1;
 }
 .login-div3{
     flex: 1;
 }
 .btn-login{
+    border-radius: 5px;
     background-color: transparent;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
     
 }
 .btn-sign-up{
+    border-radius: 5px;
     background-color: transparent;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
@@ -70,6 +73,35 @@
 .text-btn{
     font-weight: 500;
     font-size: 15px;
+}
+.header-combo-btn{
+    height: 60%;
+    display: flex;
+    padding-top: 12px;
+}
+.btn{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.header-item-btn{
+    flex: 1;
+}
+.header-language-btn{
+    flex: 1;
+}
+.header-logout-btn{
+    flex: 1;
+}
+.img-language{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+.img-logout{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
 }
 .header-menu{
     height: 45px;

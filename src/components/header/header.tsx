@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 import { Button, Dropdown, Input, Menu } from "antd";
-import { TeamOutlined, DollarOutlined, AuditOutlined, DingdingOutlined, RiseOutlined, WindowsOutlined, CaretDownOutlined, CheckCircleFilled, MailFilled, DollarCircleFilled, PieChartFilled, WindowsFilled, AndroidFilled, MessageFilled, HddFilled, MehFilled, SearchOutlined } from "@ant-design/icons";
+import { TeamOutlined, DollarOutlined, AuditOutlined, DingdingOutlined, RiseOutlined, WindowsOutlined, CaretDownOutlined, CheckCircleFilled, MailFilled, DollarCircleFilled, PieChartFilled, WindowsFilled, AndroidFilled, MessageFilled, HddFilled, MehFilled, SearchOutlined, BarsOutlined, BellFilled } from "@ant-design/icons";
 // import { click } from "@testing-library/user-event/dist/click";
 
 const { SubMenu } = Menu;
@@ -60,6 +60,27 @@ const Header = () => {
                 <p className="text-btn">SIGN UP</p>
               </Button>
             </div>
+          </div>
+          <div className="header-combo-btn">
+            <Dropdown className="header-item-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
+              <Button className="btn" type="text" icon={<BarsOutlined style={{fontSize:'22px'}} />}></Button>
+            </Dropdown>
+            <Dropdown className="header-item-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
+              <Button className="btn" type="text" icon={<MessageFilled style={{fontSize:'22px'}} />}></Button>
+            </Dropdown>
+            <Dropdown className="header-item-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
+              <Button className="btn" type="text" icon={<BellFilled style={{fontSize:'22px'}} />}></Button>
+            </Dropdown>
+            <Dropdown className="header-language-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
+              <Button className="btn" type="text">
+                <img className="img-language" src="https://jumbo.g-axon.work/images/flag/icons8-usa.png" alt="" />
+              </Button>
+            </Dropdown>
+            <Dropdown className="header-logout-btn" trigger={["click"]} overlay={menu} placement="bottomLeft">
+              <Button className="btn" type="text">
+              <img className="img-logout" src="https://toigingiuvedep.vn/wp-content/uploads/2021/01/hinh-anh-girl-xinh-toc-ngan-de-thuong.jpg" alt="" />  
+              </Button>
+            </Dropdown>
           </div>
         </div>
       </div>
@@ -141,14 +162,6 @@ const Header = () => {
           <Menu.Item key="setting:2">Option 2</Menu.Item>
           <Menu.Item key="setting:3">Option 3</Menu.Item>
           <Menu.Item key="setting:4">Option 4</Menu.Item>
-          <Menu.Item key="setting:5">Option 5</Menu.Item>
-          <Menu.Item key="setting:6">Option 6</Menu.Item>
-          <Menu.Item key="setting:7">Option 7</Menu.Item>
-          <Menu.Item key="setting:8">Option 8</Menu.Item>
-          <Menu.Item key="setting:9">Option 9</Menu.Item>
-          <Menu.Item key="setting:10">Option 10</Menu.Item>
-          <Menu.Item key="setting:11">Option 11</Menu.Item>
-          <Menu.Item key="setting:12">Option 12</Menu.Item>
         </SubMenu>
       </Menu>
     </div>
