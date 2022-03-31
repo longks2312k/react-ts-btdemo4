@@ -1,3 +1,12 @@
 .header{
     height: 180px;
 }
+.header-container{
+    height: 135px;
+    background-color: aquamarine;
+}
+.header-menu{
+    height: 45px;
+    padding: 0 110px;
+    font-size: 14px;
+}
