@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Space } from 'antd';
 import React from 'react';
 import './Friends.css'
 
@@ -8,7 +8,7 @@ const Friends = () => {
             <div className="friend-Title">
                 <h2>Friends</h2>
             </div>
-            <Row className='list-item'>
+            <Space wrap className='list-item'>
                 <Col className='friend-item image-1'>
                     <div className='margin-top'>
                         <div className='item-tick'>
@@ -33,8 +33,6 @@ const Friends = () => {
                     </div>
                     <p className='friend-name'>Mai</p>
                 </Col>
-            </Row>
-            <Row className='list-item'>
                 <Col className='friend-item image-4'>
                     <div className='margin-top'>
                         <div className='item-tick'>
@@ -59,6 +57,9 @@ const Friends = () => {
                     </div>
                     <p className='friend-name'>Linda</p>
                 </Col>
+            </Space>
+            <Row className='list-item'>
+                
             </Row>
         </div>
     );

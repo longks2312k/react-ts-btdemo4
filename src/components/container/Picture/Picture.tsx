@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'antd';
+import { Space } from 'antd';
 import './Picture.css'
 
 const Picture = () => {
@@ -8,7 +8,7 @@ const Picture = () => {
             <div className="picture-Title">
                 <h2>Picture</h2>
             </div>
-            <Row className='list-item'>
+            <Space wrap className='list-item'>
                 <img className='picture-item' src='https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg'>
                     
                 </img>
@@ -18,8 +18,8 @@ const Picture = () => {
                 <img className='picture-item' src='https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg'>
                     
                 </img>
-            </Row>
-            {/* <Row className='list-item'>
+            </Space>
+            {/* <Space wrap className='list-item'>
                 <img className='picture-item' src='https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg'>
                     
                 </img>
@@ -29,8 +29,8 @@ const Picture = () => {
                 <img className='picture-item' src='https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg'>
                     
                 </img>
-            </Row>
-            <Row className='list-item'>
+            </Space>
+            <Space wrap className='list-item'>
                 <img className='picture-item' src='https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg'>
                     
                 </img>
@@ -40,7 +40,7 @@ const Picture = () => {
                 <img className='picture-item' src='https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg'>
                     
                 </img>
-            </Row> */}
+            </Space> */}
         </div>
     );
 };

@@ -21,7 +21,8 @@
 }
 .picture-item{
     flex: 1;
-    height: 320px;
-    margin: 10px 10px;
+    height: 310px;
+    width: 310px;
+    margin: 10px;
     border-radius: 5px;
 }
