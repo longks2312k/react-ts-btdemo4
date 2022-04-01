@@ -61,7 +61,7 @@ const Picture = () => {
             <div className="picture-Title">
                 <h2>Picture</h2>
             </div>
-            <Space wrap className='list-item'>
+            <Space wrap className='list-item scroll'>
                 {productList.map((item: Product)=>(
                     <Image
                         key={item.id}
