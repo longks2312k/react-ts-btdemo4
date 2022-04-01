@@ -1,6 +1,44 @@
-import { Col, Row, Space } from 'antd';
+import { Col, Row, Space,} from 'antd';
 import React from 'react';
 import './style.css'
+
+interface Product{
+    id: number
+    src?: string
+    name: string
+}
+const productList = [
+    {
+        id: 1,
+        src:'',
+        name: 'Linh'
+    },
+    {
+        id: 2,
+        src:'',
+        name: 'Lan'
+    },
+    {
+        id: 3,
+        src:'',
+        name: 'Phuong'
+    },
+    {
+        id: 4,
+        src:'',
+        name: 'Huong'
+    },
+    {
+        id: 5,
+        src:'',
+        name: 'Thao'
+    },
+    {
+        id: 6,
+        src:'',
+        name: 'Ly'
+    },
+]
 
 const Friends = () => {
     return (
@@ -9,54 +47,16 @@ const Friends = () => {
                 <h2>Friends</h2>
             </div>
             <Space wrap className='list-item'>
-                <Col className='friend-item image-1'>
+                {productList.map((item: Product)=>(
+                    <Col key={item.id} className='friend-item image-1'>
                     <div className='margin-top'>
                         <div className='item-tick'>
                             <div className='item-tick-is'></div>
                         </div>
                     </div>
-                    <p className='friend-name'>Annie</p>
+                    <p className='friend-name'>{item.name}</p>
                 </Col>
-                <Col className='friend-item image-2'>
-                    <div className='margin-top'>
-                        <div className='item-tick'>
-                            <div className='item-tick-is'></div>
-                        </div>
-                    </div>
-                    <p className='friend-name'>Lisa</p>
-                </Col>
-                <Col className='friend-item image-3'>
-                    <div className='margin-top'>
-                        <div className='item-tick'>
-                            <div className='item-tick-is'></div>
-                        </div>
-                    </div>
-                    <p className='friend-name'>Mai</p>
-                </Col>
-                <Col className='friend-item image-4'>
-                    <div className='margin-top'>
-                        <div className='item-tick'>
-                            <div className='item-tick-is'></div>
-                        </div>
-                    </div>
-                    <p className='friend-name'>Yam</p>
-                </Col>
-                <Col className='friend-item image-5'>
-                    <div className='margin-top'>
-                        <div className='item-tick'>
-                            <div className='item-tick-is'></div>
-                        </div>
-                    </div>
-                    <p className='friend-name'>Jinx</p>
-                </Col>
-                <Col className='friend-item image-6'>
-                    <div className='margin-top'>
-                        <div className='item-tick'>
-                            <div className='item-tick-is'></div>
-                        </div>
-                    </div>
-                    <p className='friend-name'>Linda</p>
-                </Col>
+                ))}
             </Space>
             <Row className='list-item'>
                 

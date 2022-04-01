@@ -16,7 +16,6 @@ const Information = () => {
             </div>
             <div className='info-item'>
                 <div className='like-follow'>
-                    <div style={{flex:1}}></div>
                     <div style={{flex:1}} className='center'>
                         <h3 className='info-h3'>2k+</h3>
                         <p className='follower'>Follower</p>
