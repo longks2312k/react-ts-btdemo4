@@ -103,7 +103,7 @@
         width: 100%;
     }
 }
-@media only screen and (max-width: 912px) {
+@media only screen and (max-width: 912px) and (min-width: 415px) {
     .events{
         margin: 40px;
     }

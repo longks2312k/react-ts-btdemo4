@@ -35,7 +35,7 @@
         margin: 20px;
     }
 }
-@media only screen and (max-width: 912px) {
+@media only screen and (max-width: 912px) and (min-width: 415px) {
     .picture{
         margin: 40px;
     }
