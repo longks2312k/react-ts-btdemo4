@@ -46,3 +46,11 @@
         font-size: 12px;
     }
 }
+@media only screen and (max-width: 912px) {
+    .footer{
+        padding: 0 60px;
+    }
+    .btn-buy{
+        font-size: 14px;
+    }
+}

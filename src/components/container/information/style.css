@@ -118,5 +118,23 @@
     .info-tab-bar{
         margin-right: 0;
         padding: 0 20px 0 20px;
+        /* Fix tạm thời */
+        display: none;
+    }
+}
+@media only screen and (max-width: 912px) {
+    .info{
+        margin: 0 30px 0 30px;
+    }
+    .info-avatar{
+        width: 60%;
+    }
+    .like-follow{
+        height: 30%;
+        margin: 60px 0 0 0;
+        display: flex;
+    }
+    .info-tab-bar{
+        margin-right: 0;
     }
 }

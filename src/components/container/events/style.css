@@ -103,3 +103,8 @@
         width: 100%;
     }
 }
+@media only screen and (max-width: 912px) {
+    .events{
+        margin: 40px;
+    }
+}

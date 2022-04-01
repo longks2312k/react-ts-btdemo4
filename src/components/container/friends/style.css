@@ -90,3 +90,18 @@
         margin-left: 125px;
     }
 }
+@media only screen and (max-width: 912px) {
+    .friend{
+        margin: 40px;
+    }
+    .friend-item{
+        width: 250px;
+        height: 250px;
+    }
+    .friend-name{
+        margin-top: 190px;
+    }
+    .item-tick{
+        margin-left: 225px;
+    }
+}
