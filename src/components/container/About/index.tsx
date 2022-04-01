@@ -1,4 +1,10 @@
-import { ContainerFilled, FireFilled, ReadFilled, SwitcherFilled, TagsFilled } from "@ant-design/icons";
+import {
+  ContainerFilled,
+  FireFilled,
+  ReadFilled,
+  SwitcherFilled,
+  TagsFilled,
+} from "@ant-design/icons";
 import { Space } from "antd";
 import React from "react";
 import "./style.css";
@@ -6,7 +12,11 @@ import "./style.css";
 const About = () => {
   return (
     <div className="about">
-      <div className="about-title"></div>
+      <div className="about-title">
+        <div className="about-name">
+          <h2>About</h2>
+        </div>
+      </div>
       <div className="about-content">
         <Space wrap>
           <div className="about-item">
