@@ -1,7 +1,7 @@
 import { ArrowRightOutlined, CalendarOutlined, StarFilled } from '@ant-design/icons';
 import { Button } from 'antd';
 import React from 'react';
-import './Events.css'
+import './style.css'
 
 const Events = () => {
     return (

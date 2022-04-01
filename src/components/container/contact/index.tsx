@@ -1,5 +1,5 @@
 import React from "react";
-import "./Contact.css";
+import "./style.css";
 import { Space } from "antd";
 import { MailOutlined, LinkOutlined, PhoneOutlined } from "@ant-design/icons";
 const Contact = () => {

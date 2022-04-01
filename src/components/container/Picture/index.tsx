@@ -1,6 +1,6 @@
 import React from 'react';
 import { Space } from 'antd';
-import './Picture.css'
+import './style.css'
 
 const Picture = () => {
     return (

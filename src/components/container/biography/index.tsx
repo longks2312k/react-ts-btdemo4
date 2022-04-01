@@ -1,5 +1,5 @@
 import React from 'react';
-import './Biography.css'
+import './style.css'
 
 const Biography = () => {
     return (

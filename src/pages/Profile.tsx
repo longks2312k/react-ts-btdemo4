@@ -1,13 +1,13 @@
 import React from 'react';
-import About from '../components/container/About/About';
-import Biography from '../components/container/biography/Biography';
-import Contact from '../components/container/contact/Contact';
-import Events from '../components/container/Events/Events';
-import Friends from '../components/container/friends/Friends';
-import Information from '../components/container/information/information';
-import Picture from '../components/container/Picture/Picture';
-import Footer from '../components/footer/Footer';
-import Header from '../components/header/header';
+import About from '../components/container/About';
+import Biography from '../components/container/biography';
+import Contact from '../components/container/contact';
+import Events from '../components/container/events';
+import Friends from '../components/container/friends';
+import Information from '../components/container/information';
+import Picture from '../components/container/Picture';
+import Footer from '../components/footer';
+import Header from '../components/header';
 import './profile.css'
 
 const Profile = () => {

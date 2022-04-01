@@ -1,6 +1,6 @@
 import { Col, Row, Space } from 'antd';
 import React from 'react';
-import './Friends.css'
+import './style.css'
 
 const Friends = () => {
     return (
