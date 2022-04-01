@@ -33,3 +33,16 @@
     border-radius: 5px;
     background-color: #3f51b5;
 }
+
+/* Media */
+@media only screen and (max-width: 414px) {
+    .footer{
+        padding: 0 40px;
+    }
+    .footer-info{
+        width: 30%;
+    }
+    .btn-buy{
+        font-size: 12px;
+    }
+}

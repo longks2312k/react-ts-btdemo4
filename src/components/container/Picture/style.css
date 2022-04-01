@@ -15,7 +15,6 @@
 }
 .list-item{
     flex: 1;
-    margin: 0 15px;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -25,4 +24,11 @@
     width: 310px;
     margin: 10px;
     border-radius: 5px;
+}
+
+/* Media */
+@media only screen and (max-width: 414px) {
+    .picture{
+        margin: 20px;
+    }
 }
