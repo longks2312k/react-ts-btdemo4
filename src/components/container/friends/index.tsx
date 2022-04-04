@@ -49,13 +49,13 @@ const Friends = () => {
             <Space wrap className='list-item'>
                 {productList.map((item: Product)=>(
                     <Col key={item.id} className='friend-item image-1'>
-                    <div className='margin-top'>
-                        <div className='item-tick'>
-                            <div className='item-tick-is'></div>
+                        <div className='margin-top'>
+                            <div className='item-tick'>
+                                <div className='item-tick-is'></div>
+                            </div>
                         </div>
-                    </div>
-                    <p className='friend-name'>{item.name}</p>
-                </Col>
+                        <p className='friend-name'>{item.name}</p>
+                    </Col>
                 ))}
             </Space>
             <Row className='list-item'>

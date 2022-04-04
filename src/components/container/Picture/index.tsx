@@ -1,6 +1,7 @@
 import React from 'react';
 import { Space, Image } from 'antd';
 import './style.css'
+import ModalBtn from '../Modalbtn';
 
 interface Product{
     id: number
@@ -60,6 +61,7 @@ const Picture = () => {
         <div className='picture'>
             <div className="picture-Title">
                 <h2>Picture</h2>
+                <ModalBtn/>
             </div>
             <Space wrap className='list-item scroll'>
                 {productList.map((item: Product)=>(
