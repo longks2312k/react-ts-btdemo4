@@ -27,7 +27,6 @@ const Picture = () => {
                 className="picture-item"
                 placeholder={true}
                 alt={item.name}
-                preview={false}
                 src={item.src}
               ></Image>
             </div>
