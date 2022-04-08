@@ -59,6 +59,7 @@ export const pictureSlice = createSlice({
       state.push(action.payload);
     },
   },
+  // extraReducers: 
 });
 
 export const { addPicture } = pictureSlice.actions;
