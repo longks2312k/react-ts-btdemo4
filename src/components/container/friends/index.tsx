@@ -1,5 +1,4 @@
 import { Col, Row, Space,} from 'antd';
-import { url } from 'inspector';
 import React from 'react';
 import './style.css'
 
@@ -57,18 +56,20 @@ const Friends = () => {
             <div className="friend-Title">
                 <h2>Friends</h2>
             </div>
-            <Space wrap className='list-item'>
-                {productList.map((item: Product, index)=>(
-                    <Col key={item.id} className={`friend-item`} style={{backgroundImage:` url(${item.src})`}}>
-                        <div className='margin-top'>
-                            <div className='item-tick'>
-                                <div className='item-tick-is'></div>
-                            </div>
-                        </div>
-                        <p className='friend-name'>{item.name}</p>
-                    </Col>
-                ))}
-            </Space>
+            <div className='list-item'>
+              <Space wrap>
+                  {productList.map((item: Product)=>(
+                      <Col key={item.id} className={`friend-item`} style={{backgroundImage:` url(${item.src})`}}>
+                          <div className='margin-top'>
+                              <div className='item-tick'>
+                                  <div className='item-tick-is'></div>
+                              </div>
+                          </div>
+                          <p className='friend-name'>{item.name}</p>
+                      </Col>
+                  ))}
+              </Space>
+            </div>
             <Row className='list-item'>
                 
             </Row>
