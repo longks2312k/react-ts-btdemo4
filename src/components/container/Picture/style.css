@@ -26,6 +26,12 @@
     margin: 10px;
     border-radius: 5px;
 }
+.search-input{
+    height: 50px;
+    width: 400px;
+    padding: 3px 0;
+    margin: 0 10px;
+}
 
 /* Media */
 @media only screen and (max-width: 414px) {
