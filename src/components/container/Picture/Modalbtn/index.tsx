@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./style.css";
-import { useAppDispatch } from "../../../app/hooks";
-import { v4 as uuid4 } from "uuid"
-import { Button, Input, Modal } from "antd";
-import { addPicture } from "../Picture/pictureSlice";
+import { useAppDispatch } from "../../../../app/hooks";
+import { v4 as uuid4 } from "uuid";
+import { Button, Input, Modal, Space } from "antd";
+import { addPicture } from "../pictureSlice";
+import { PlusCircleTwoTone, SearchOutlined } from "@ant-design/icons";
+import { searchName } from "../searchSlice";
 
 const ModalBtn = () => {
   const [source, setSource] = useState<string>("");
@@ -32,18 +34,44 @@ const ModalBtn = () => {
     setIsModalVisible(false);
   };
 
+  const [isSearch, setIsSearch] = useState(false);
+  const handleOpenSearch = () => {
+    setIsSearch(!isSearch);
+  };
+
+  const [searchText, setSearchText] = useState("");
+  const onSearch = (e: any) => {
+    setSearchText(e.target.value);
+    dispatch(searchName(e.target.value));
+  };
+
   return (
     <div>
       <div>
-        <div className="btn-add">
+        <Space align="end" className="btn-add">
+          {isSearch === true ? (
+            <Input
+              value={searchText}
+              placeholder=" Search"
+              className="picture-search-input"
+              onChange={onSearch}
+            />
+          ) : (
+            <></>
+          )}
           <Button
             className="btn-modal"
-            type="primary"
+            type="text"
+            icon={<SearchOutlined className="search-icon" />}
+            onClick={handleOpenSearch}
+          ></Button>
+          <Button
+            className="btn-modal"
+            type="text"
+            icon={<PlusCircleTwoTone className="add-icon" />}
             onClick={handleOpenModal}
-          >
-            Add New Picture
-          </Button>
-        </div>
+          ></Button>
+        </Space>
         <Modal
           title="Add New Product"
           visible={isModalVisible}

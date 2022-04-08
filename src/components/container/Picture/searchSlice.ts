@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
   export interface SearchState {
-    searchText: any;
+    searchText: string;
   }
   
   const initialState: SearchState = {

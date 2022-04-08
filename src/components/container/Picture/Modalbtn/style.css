@@ -1,0 +1,24 @@
+.btn-add{
+    padding: 0;
+}
+.input-text{
+    padding: 5px 10px;
+}
+.btn-modal{
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+}
+.add-icon{
+    font-size: 28px;
+}
+.search-icon{
+    font-size: 22px;
+    color: rgb(95, 86, 86);
+}
+.picture-search-input{
+    height: 32px;
+    border-radius: 5px;
+    width: 320px;
+    margin: 10px 0 0 10px;
+}

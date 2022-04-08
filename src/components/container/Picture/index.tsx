@@ -1,47 +1,36 @@
-import React, { useState } from "react";
-import { Space, Image, Input } from "antd";
+import React from "react";
+import { Space, Image } from "antd";
 import "./style.css";
-import ModalBtn from "../Modalbtn";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import ModalBtn from "./Modalbtn";
+import {  useAppSelector } from "../../../app/hooks";
 import { searchPictureSelector } from "./pictureSlice";
-import { searchName } from "./searchSlice";
-
-const { Search } = Input;
 
 const Picture = () => {
   const productList = useAppSelector(searchPictureSelector);
-  const dispatch = useAppDispatch();
-
-  const [searchText, setSearchText] = useState("");
-  const onSearch = (e: any) => {
-    setSearchText(e.target.value);
-    dispatch(searchName(e.target.value));
-  };
 
   return (
     <div className="picture">
-      <div className="picture-Title">
-        <h2>Picture</h2>
-        <Search
-          value={searchText}
-          placeholder="input search text"
-          className="search-input"
-          onChange={onSearch}
-          enterButton
-        />
-        <ModalBtn />
-      </div>
+      <Space align="baseline" className="picture-Title">
+        <div className="picture-h2-title">
+          <h2>Picture</h2>
+        </div>
+        <div className="picture-combo-btn">
+          <ModalBtn/>
+        </div>  
+      </Space>
       <div className="list-item">
         <Space align="start" size={[8, 16]} wrap className="scroll">
           {productList.map((item) => (
-            <Image
-              key={item.id}
-              className="picture-item"
-              placeholder={true}
-              alt={item.name}
-              preview={false}
-              src={item.src}
-            ></Image>
+            <div className="picture-item" key={item.id}>
+              <h3 className="picture-name">{item.name}</h3>
+              <Image
+                className="picture-item"
+                placeholder={true}
+                alt={item.name}
+                preview={false}
+                src={item.src}
+              ></Image>
+            </div>
           ))}
         </Space>
       </div>
