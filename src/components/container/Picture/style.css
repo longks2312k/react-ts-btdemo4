@@ -14,8 +14,6 @@
 }
 .list-item{
     flex: 1;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 .scroll{
     overflow-y: scroll;
