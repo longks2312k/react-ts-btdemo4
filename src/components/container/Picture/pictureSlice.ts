@@ -58,11 +58,15 @@ export const pictureSlice = createSlice({
     addPicture: (state, action) => {
       state.push(action.payload);
     },
+    remotePicture: (state, action) => {
+      state.filter((item) => item.id === action.payload)
+    },
+    remoteAll: () => []
   },
   // extraReducers: 
 });
 
-export const { addPicture } = pictureSlice.actions;
+export const { addPicture, remotePicture, remoteAll } = pictureSlice.actions;
 
 
 

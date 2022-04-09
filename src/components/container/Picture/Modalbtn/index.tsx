@@ -3,8 +3,8 @@ import "./style.css";
 import { useAppDispatch } from "../../../../app/hooks";
 import { v4 as uuid4 } from "uuid";
 import { Button, Input, Modal, Space } from "antd";
-import { addPicture } from "../pictureSlice";
-import { PlusCircleTwoTone, SearchOutlined } from "@ant-design/icons";
+import { addPicture, remoteAll } from "../pictureSlice";
+import { DeleteTwoTone, PlusCircleTwoTone, SearchOutlined } from "@ant-design/icons";
 import { searchName } from "../searchSlice";
 
 const ModalBtn = () => {
@@ -45,6 +45,10 @@ const ModalBtn = () => {
     dispatch(searchName(e.target.value));
   };
 
+  const handleRemoteStore = () => {
+    dispatch(remoteAll());
+  }
+
   return (
     <div>
       <div>
@@ -71,6 +75,12 @@ const ModalBtn = () => {
             icon={<PlusCircleTwoTone className="add-icon" />}
             onClick={handleOpenModal}
           ></Button>
+          <Button
+            className="btn-modal"
+            type="text"
+            icon={<DeleteTwoTone className="add-icon" />}
+            onClick={handleRemoteStore}
+          ></Button>
         </Space>
         <Modal
           title="Add New Product"
@@ -95,7 +105,7 @@ const ModalBtn = () => {
             />
           </div>
           <div className="div-button">
-            <Button onClick={onAdd} className="btn-modal" type="primary">
+            <Button onClick={onAdd} className="btn-add-modal" type="primary">
               Add New Product
             </Button>
           </div>

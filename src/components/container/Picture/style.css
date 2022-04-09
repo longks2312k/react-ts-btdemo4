@@ -27,13 +27,20 @@
     border-radius: 5px;
 }
 .picture-name{
-    margin: 10px 0 -5px 20px ;
+    margin: 3px 0 0 15px ;
 }
 .picture-h2-title{
     flex: 3;
 }
 .picture-combo-btn{
     flex: 1; 
+}
+.btn-delete-picture{
+    font-size: 16px;
+    border-radius: 20px;
+}
+.picture-item-header{
+    margin-bottom: -8px;
 }
 
 /* Media */
