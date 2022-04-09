@@ -59,23 +59,26 @@ export const pictureSlice = createSlice({
       state.push(action.payload);
     },
     remotePicture: (state, action) => {
-      state.filter((item) => item.id === action.payload)
+      //dùng finIndex lấy id => dùng splice để xóa(nếu sd filter sẽ phải return)
+      const newItem =  state.findIndex((item) => item.id === action.payload);
+      state.splice(newItem,1)
     },
-    remoteAll: () => []
+    remoteAll: () => [],
   },
-  // extraReducers: 
+  // extraReducers:
 });
 
 export const { addPicture, remotePicture, remoteAll } = pictureSlice.actions;
 
-
-
-
 export const selectPicture = (state: RootState) => state.picture;
 export const searchPicture = (state: RootState) => state.search;
 
-export const searchPictureSelector = createSelector (selectPicture,searchPicture,(picture, search) => {
-  return picture.filter((item) => item.name.includes(search.searchText));
-})
+export const searchPictureSelector = createSelector(
+  selectPicture,
+  searchPicture,
+  (picture, search) => {
+    return picture.filter((item) => item.name.includes(search.searchText));
+  }
+);
 
 export default pictureSlice.reducer;
