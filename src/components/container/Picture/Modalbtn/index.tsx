@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
 import { useAppDispatch } from "../../../../app/hooks";
 import { v4 as uuid4 } from "uuid";
@@ -6,11 +6,13 @@ import { Button, Input, Modal, Space } from "antd";
 import { addPicture, remoteAll } from "../pictureSlice";
 import { DeleteTwoTone, PlusCircleTwoTone, SearchOutlined } from "@ant-design/icons";
 import { searchName } from "../searchSlice";
+import { ThemeContext } from "../../../../contexts/ThemeContext";
 
 const ModalBtn = () => {
   const [source, setSource] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const { bgrColor } = useContext(ThemeContext);
 
   const dispatch = useAppDispatch();
 
@@ -56,6 +58,7 @@ const ModalBtn = () => {
           {isSearch === true ? (
             <Input
               value={searchText}
+              style={{color: `${bgrColor}`}}
               placeholder=" Search"
               className="picture-search-input"
               onChange={onSearch}

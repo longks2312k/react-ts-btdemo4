@@ -1,7 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Table, Radio, Divider } from 'antd';
 import "./style.css";
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 
 const columns = [
@@ -59,31 +60,22 @@ const rowSelection = {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
   },
   getCheckboxProps: (record: DataType) => ({
-    disabled: record.name === 'Disabled User', // Column configuration not to be checked
-    name: record.name,
+    // disabled: record.name === 'Disabled User', // Column configuration not to be checked
+    // name: record.name,
   }),
 };
 
 const PaymentTable = () => {
-  const [selectionType, setSelectionType] = useState<'checkbox' | 'radio'>('checkbox');
+  const {itemColor} = useContext(ThemeContext);
 
   return (
-    <div className="table-payment">
-      <Radio.Group
-        onChange={({ target: { value } }) => {
-          setSelectionType(value);
-        }}
-        value={selectionType}
-      >
-        <Radio value="checkbox">Checkbox</Radio>
-        <Radio value="radio">radio</Radio>
-      </Radio.Group>
+    <div className="table-payment" style={{backgroundColor:`${itemColor}`}}>
 
       <Divider />
 
       <Table
         rowSelection={{
-          type: selectionType,
+          type: "checkbox",
           ...rowSelection,
         }}
         columns={columns}

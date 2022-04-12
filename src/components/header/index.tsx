@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
 import { Button, Drawer, Dropdown, Input, Menu } from "antd";
 import {
@@ -26,6 +26,8 @@ import {
   ContainerFilled,
   DesktopOutlined,
 } from "@ant-design/icons";
+import ThemeBtn from "./themeBtn";
+import { ThemeContext } from "../../contexts/ThemeContext";
 // import { click } from "@testing-library/user-event/dist/click";
 
 const { SubMenu } = Menu;
@@ -67,6 +69,7 @@ const Header = () => {
   // handleClick = e => {
   //   setCurrent(e.key);
   // };
+  const {bgrColor,textColor,itemColor} = useContext(ThemeContext);
 
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const showDrawer = () => {
@@ -77,9 +80,9 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className="header" style={{backgroundColor:`${bgrColor}`}}>
       <div className="mobile-menu">
-            <Button type="text" icon={<MenuUnfoldOutlined/>} onClick={showDrawer} style={{ marginTop:'20px' }}>
+            <Button type="text"  icon={<MenuUnfoldOutlined style={{color:`${textColor}`}}/>} onClick={showDrawer} style={{ marginTop:'20px' }}>
               
             </Button>
             <Drawer placement="left" visible={collapsed} onClose={onClose} width={220}>
@@ -123,6 +126,7 @@ const Header = () => {
             <Input
               className="header-input"
               type="textarea"
+              // style={{backgroundColor:`${bgrColor}`}}
               allowClear={true}
               size="large"
               placeholder="Search here..."
@@ -134,7 +138,7 @@ const Header = () => {
               overlay={menu}
               placement="bottomLeft"
             >
-              <Button>CATEGORIES</Button>
+              <Button style={{backgroundColor:`${itemColor}`,color:`${textColor}`}}>CATEGORIES</Button>
             </Dropdown>
           </div>
         </div>
@@ -143,15 +147,16 @@ const Header = () => {
             <div className="login-div1"></div>
             <div className="login-div2">
               <Button type="text" className="btn-login">
-                <p className="text-btn">LOGIN</p>
+                <p className="text-btn" style={{color:`${textColor}`}}>LOGIN</p>
               </Button>
             </div>
             <div className="div-4"></div>
             <div className="login-div3">
               <Button type="text" className="btn-sign-up">
-                <p className="text-btn">SIGN UP</p>
+                <p className="text-btn" style={{color:`${textColor}`}}>SIGN UP</p>
               </Button>
             </div>
+            <ThemeBtn/>
           </div>
           <div className="header-combo-btn">
             <Button
@@ -168,7 +173,7 @@ const Header = () => {
               <Button
                 className="btn"
                 type="text"
-                icon={<BarsOutlined style={{ fontSize: "22px" }} />}
+                icon={<BarsOutlined style={{ color:`${textColor}`, fontSize: "22px" }} />}
               ></Button>
             </Dropdown>
             <Dropdown
@@ -180,7 +185,7 @@ const Header = () => {
               <Button
                 className="btn"
                 type="text"
-                icon={<MessageFilled style={{ fontSize: "22px" }} />}
+                icon={<MessageFilled style={{color:`${textColor}`, fontSize: "22px" }} />}
               ></Button>
             </Dropdown>
             <Dropdown
@@ -192,7 +197,7 @@ const Header = () => {
               <Button
                 className="btn"
                 type="text"
-                icon={<BellFilled style={{ fontSize: "22px" }} />}
+                icon={<BellFilled style={{color:`${textColor}`, fontSize: "22px" }} />}
               ></Button>
             </Dropdown>
             <Dropdown
