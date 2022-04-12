@@ -18,7 +18,6 @@ const Profile = () => {
   const { bgrColor, itemColor, textColor } = useContext(ThemeContext);
   //Listen DOM Event
   const [showGoToTop, setShowGoToTop] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     //Scroll
     const handleScroll = () => {
@@ -26,15 +25,9 @@ const Profile = () => {
     };
     window.addEventListener("scroll", handleScroll);
 
-    //Resize
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
     //cleanup fs
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
   return (
