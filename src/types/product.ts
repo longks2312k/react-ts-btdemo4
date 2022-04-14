@@ -3,6 +3,7 @@ import React from "react";
 export interface ProductResponse {
     id: React.Key;
     product_name: string;
-    date: number;
+    date: DateConstructor;
     image: string;
+    title: string;
 }

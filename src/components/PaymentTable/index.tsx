@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Table, Radio, Divider } from "antd";
+import { Table, Radio, Divider, Row, Col } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { getProducts } from "./thunk";
@@ -76,8 +76,6 @@ const PaymentTable = () => {
   const { itemColor } = useContext(ThemeContext);
   const dispatch = useAppDispatch();
   const { product, loading } = useAppSelector(listProductsSelector);
-  console.log(loading)
-  
 
   console.log('rs',product);
 
@@ -98,17 +96,21 @@ const PaymentTable = () => {
       /> */}
       {loading && <div>loading...</div>}
       {product.map((item) =>
-          <div key={item.id} className="ant-list-item-meta">
-            <div className="ant-list-item-meta-avatar">
+          <Row key={item.id} className="table-item" style={{backgroundColor: '#f4f4f7'}}>
+            <Col className="" span={4}>
+              <img className="table-item-img" src={item.image} alt="" />
+            </Col>
+            <Col className="table-item-content" span={14}>
+              <h2 className="">{item.product_name}</h2>
+              <p>{item.title}</p>
+            </Col>
+            <Col className="table-item-button" span={3}>
               <h3>{item.id}</h3>
-            </div>
-            <div className="ant-list-item-meta-content">
-              <h2 className="ant-list-item-meta-title">{item.product_name}</h2>
-            </div>
-            <ul className="ant-list-item-action">
-              
-            </ul>
-          </div>
+            </Col>
+            <Col className="table-item-button" span={3}>
+              <h3>{item.id}</h3>
+            </Col>
+          </Row>
         )
       }
     </div>

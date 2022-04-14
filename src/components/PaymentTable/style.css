@@ -1,9 +1,24 @@
 .table-payment{
-    background-color: #fff;
-    padding: 0 20px 15px 20px;
+    background-color: #dbdbdd;
+    padding: 10px;
     margin: 20px 120px 20px 120px;
     border-radius: 5px;
     box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
     -webkit-box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
     -moz-box-shadow: 0px 3px 6px 1px rgba(43, 43, 43, 0.5);
+}
+.table-item{
+    margin: 10px;
+    border-radius: 5px;
+}
+.table-item-button{
+    padding: 10px;
+}
+.table-item-content{
+    padding: 10px;
+}
+.table-item-img{
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
 }

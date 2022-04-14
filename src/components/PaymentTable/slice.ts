@@ -18,22 +18,26 @@ export const productSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(
-      getProducts.fulfilled,
-      (state, action: PayloadAction<Array<ProductResponse>>) => {
+    builder
+      .addCase(
+        getProducts.fulfilled,
+        (state, action: PayloadAction<Array<ProductResponse>>) => {
+          return {
+            ...state,
+            product: action.payload,
+            loading: false,
+          };
+        }
+      )
+      .addCase(getProducts.pending, (state) => {
         return {
           ...state,
-          product: action.payload,
-          loading: false,
-        };
-      }
-    );
-    builder.addCase(getProducts.pending, (state) => {
-      return {
-        ...state,
-        loading: true,
-      }
-    });
+          loading: true,
+        }
+      })
+      .addCase(getProducts.rejected, (state) => {
+        return state
+      })
   },
 });
 
