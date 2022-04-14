@@ -1,5 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../../app/store";
+import { RootState } from "../../../store/store";
 
 export interface PictureState {
   id: number;

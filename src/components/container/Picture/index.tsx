@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Space, Image, Col, Row, Button } from "antd";
 import "./style.css";
 import ModalBtn from "./Modalbtn";
-import {  useAppDispatch, useAppSelector } from "../../../app/hooks";
+import {  useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { remotePicture, searchPictureSelector } from "./pictureSlice";
 import { CloseOutlined } from "@ant-design/icons";
 import { ThemeContext } from "../../../contexts/ThemeContext";

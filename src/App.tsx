@@ -9,8 +9,8 @@ function App() {
   return (
     <div>
       <ThemeContextProvider>
-        <Profile/>
-        {/* <Payment/> */}
+        {/* <Profile/> */}
+        <Payment/>
       </ThemeContextProvider>
     </div>
   );

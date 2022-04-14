@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./style.css";
-import { useAppDispatch } from "../../../../app/hooks";
+import { useAppDispatch } from "../../../../store/hooks";
 import { v4 as uuid4 } from "uuid";
 import { Button, Input, Modal, Space } from "antd";
 import { addPicture, remoteAll } from "../pictureSlice";
