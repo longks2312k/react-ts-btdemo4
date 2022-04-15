@@ -1,36 +1,76 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../store/store";
 
-export const getPayment = createAsyncThunk("payment/getPayment", async () => {
-  return fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
-    res.json()
-  );
-});
+export interface PaymentState {
+  id: number;
+  image: string;
+  name: string;
+  piece: number;
+  number: number;
+}
 
-// export interface SearchState {
-//   searchText: string;
-// }
+const initialState: Array<PaymentState> = [
+  {
+    id: 1,
+    name: 'long',
+    piece: 10000,
+    number: 1,
+    image: 'https://vaithuhayho.com/wp-content/uploads/2021/03/anh-gai-dep-61.jpg'
+  },
+  {
+    id: 2,
+    name: 'long',
+    piece: 10000,
+    number: 2,
+    image: 'https://vaithuhayho.com/wp-content/uploads/2021/03/anh-gai-dep-61.jpg'
+  },
+  {
+    id: 3,
+    name: 'long',
+    piece: 10000,
+    number: 1,
+    image: 'https://vaithuhayho.com/wp-content/uploads/2021/03/anh-gai-dep-61.jpg'
+  },
+]
 
-// const initialState: SearchState = {
-//   searchText: "",
-// };
-
-export const searchSlice = createSlice({
+export const paymentSlice = createSlice({
   name: "payment",
-  initialState: {
-      list: [],
-      status: null,
-  },
-
+  initialState,
   reducers: {
-    searchName: (state, action) => {
-      state
+    addPayment: (state, action) => {
+      state.push(action.payload);
     },
+    remotePayment: (state, action) => {
+      const newItem =  state.findIndex((item) => item.id === action.payload);
+      state.splice(newItem,1)
+    },
+    upNumberPayment: (state, action) => {
+      return state.map(state => state.id === action.payload
+        ? { ...state, number: state.number + 1}
+        : state
+      )
+    },
+    reduceNumberPayment: (state, action) => {
+      return state.map(state => state.id === action.payload
+        ? { ...state, number: state.number !== 1 ? state.number - 1 : 1}
+        : state
+      )
+    },
+    remoteAll: () => [],
   },
-
-  extraReducers: {
-    
-  },    
+  // extraReducers:
 });
-export const { searchName } = searchSlice.actions;
 
-export default searchSlice.reducer;
+export const { addPayment, remotePayment, upNumberPayment, reduceNumberPayment, remoteAll } = paymentSlice.actions;
+
+export const selectPayment = (state: RootState) => state.payment;
+
+export const getPaymentSelector = createSelector(
+  selectPayment,
+  (payment) => {
+    return payment
+  }
+);
+
+
+export default paymentSlice.reducer;

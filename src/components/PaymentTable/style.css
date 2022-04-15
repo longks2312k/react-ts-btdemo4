@@ -11,6 +11,11 @@
     margin: 10px;
     border-radius: 5px;
 }
+.table-scroll{
+    display: block;
+    overflow-y: scroll;
+    height: 480px;
+}
 .table-item-button{
     padding: 10px;
 }

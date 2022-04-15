@@ -13,6 +13,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import "./style.css";
 import { Button } from "antd";
 import { UpCircleFilled } from "@ant-design/icons";
+import PaymentTable from "../../components/PaymentTable";
 
 const Profile = () => {
   const { bgrColor, itemColor, textColor } = useContext(ThemeContext);
@@ -37,6 +38,7 @@ const Profile = () => {
       <Contact />
       <Friends />
       <Picture />
+      <PaymentTable/>
       <About />
       <Biography />
       <Events />

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import Bills from '../../components/Bills';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
-import PaymentTable from '../../components/PaymentTable';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import './style.css'
 
@@ -10,7 +10,7 @@ const Payment = () => {
     return (
         <div style={{backgroundColor:`${bgrColor}`}}>
             <Header/>
-            <PaymentTable/>
+            <Bills/>
             <Footer/>
         </div>
     );

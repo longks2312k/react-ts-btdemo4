@@ -3,6 +3,7 @@ import pictureReducer from '../components/container/Picture/pictureSlice';
 import searchReducer from '../components/container/Picture/searchSlice';
 import productReducer from '../components/PaymentTable/slice'
 import billsReducer from '../components/PaymentTable/billSlice'
+import paymentReducer from '../components/PaymentTable/paymentSlice'
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     search: searchReducer,
     product: productReducer,
     bills: billsReducer,
+    payment: paymentReducer,
   },
 });
 

@@ -16,7 +16,9 @@ const initialState: InitProduct = {
 export const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    
+  },
   extraReducers: (builder) => {
     builder
       .addCase(
