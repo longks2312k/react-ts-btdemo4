@@ -22,3 +22,12 @@
     width: 150px;
     border-radius: 5px;
 }
+.table-add-btn{
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    margin: 15% 10%;
+}
+.table-add-icon{
+    font-size: 42px;
+}
