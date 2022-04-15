@@ -8,8 +8,8 @@ export const getProducts = createAsyncThunk<ProductResponse[], boolean>('product
     return response.data;
 });
 
-export const getBillProduct = createAsyncThunk<BillsResponse[], boolean>('products/addProductToBills', async () => {
-    const response = await getBills();
-    // console.log('response', response);
+export const getBillProduct = createAsyncThunk<BillsResponse[], BillsResponse>('products/addProductToBills', async (params) => {
+    const response = await getBills(params);
+    console.log('resp', response.data);
     return response.data;
 });

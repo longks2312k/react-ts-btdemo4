@@ -2,11 +2,12 @@ import React, { useContext, useEffect } from "react";
 import { Row, Col, Button, Space } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { getProducts } from "./thunk";
+import { getBillProduct, getProducts } from "./thunk";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { listProductsSelector } from "./slice";
 import { PlusCircleFilled } from "@ant-design/icons";
 import { addPayment } from "./paymentSlice";
+import { json } from "stream/consumers";
 
 const PaymentTable = () => {
   const { itemColor } = useContext(ThemeContext);
@@ -41,15 +42,37 @@ const PaymentTable = () => {
                 className="table-add-btn"
                 type="text"
                 onClick={() => {
-                  dispatch(
-                    addPayment({
-                      id: item.id,
-                      name: item.product_name,
-                      image: item.image,
-                      piece: item.piece,
-                      number: 1,
-                    })
-                  );
+                  const array = {
+                    id: item.id,
+                    product_name: item.product_name,
+                    piece: item.piece,
+                    count: 1,
+                  };
+                  const array2 = localStorage.getItem("addToCart");
+                  if (!array2) {
+                    localStorage.setItem("addToCart", JSON.stringify([array]));
+                  } else {
+                    const array3 = JSON.parse(array2);
+                    array3.push(array);
+                    localStorage.setItem("addToCart", JSON.stringify(array3));
+                  }
+                  // dispatch(
+                  //   addPayment({
+                  //     id: item.id,
+                  //     name: item.product_name,
+                  //     image: item.image,
+                  //     piece: item.piece,
+                  //     number: 1,
+                  //   })
+                  // );
+                  // dispatch(
+                  //   getBillProduct({
+                  //     id: item.id,
+                  //     product_name: item.product_name,
+                  //     piece: item.piece,
+                  //     number: 1,
+                  //   })
+                  // );
                 }}
                 icon={<PlusCircleFilled className="table-add-icon" />}
               ></Button>

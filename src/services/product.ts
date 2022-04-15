@@ -12,12 +12,11 @@ export const getProductService = (): AxiosPromise<ProductResponse[]> => {
 };
 
 
-export const getBills = (): AxiosPromise<BillsResponse[]> => {
+export const getBills = (data: BillsResponse): AxiosPromise<BillsResponse[]> => {
     const request: AxiosRequestConfig = {
-        method: 'GET',
+        method: 'POST',
         url: `${env.path_product}/bills`,
+        data,
     };
     return instance(request);
 };
-
-
