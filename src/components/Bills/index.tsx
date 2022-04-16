@@ -2,14 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { Row, Col, Button } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { useAppDispatch } from "../../store/hooks";
 import {  PaymentState } from "../PaymentTable/paymentSlice";
 import { CloseOutlined, MinusCircleFilled, PlusCircleFilled } from "@ant-design/icons";
 
 const Bills = () => {
   const { itemColor } = useContext(ThemeContext);
-  const dispatch = useAppDispatch();
-  // const payment = useAppSelector(getPaymentSelector);
 
   const [payment, setPayment] = useState<Array<PaymentState>>([])
   const [reset ,setReset] = useState(1);
