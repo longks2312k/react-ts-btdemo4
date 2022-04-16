@@ -6,7 +6,7 @@ export interface PaymentState {
   image: string;
   name: string;
   piece: number;
-  number: number;
+  count: number;
 }
 
 const initialState: Array<PaymentState> = [
@@ -14,21 +14,21 @@ const initialState: Array<PaymentState> = [
     id: 1,
     name: 'long',
     piece: 10000,
-    number: 1,
+    count: 1,
     image: 'https://vaithuhayho.com/wp-content/uploads/2021/03/anh-gai-dep-61.jpg'
   },
   {
     id: 2,
     name: 'long',
     piece: 10000,
-    number: 2,
+    count: 2,
     image: 'https://vaithuhayho.com/wp-content/uploads/2021/03/anh-gai-dep-61.jpg'
   },
   {
     id: 3,
     name: 'long',
     piece: 10000,
-    number: 1,
+    count: 1,
     image: 'https://vaithuhayho.com/wp-content/uploads/2021/03/anh-gai-dep-61.jpg'
   },
 ]
@@ -46,13 +46,13 @@ export const paymentSlice = createSlice({
     },
     upNumberPayment: (state, action) => {
       return state.map(state => state.id === action.payload
-        ? { ...state, number: state.number + 1}
+        ? { ...state, number: state.count + 1}
         : state
       )
     },
     reduceNumberPayment: (state, action) => {
       return state.map(state => state.id === action.payload
-        ? { ...state, number: state.number !== 1 ? state.number - 1 : 1}
+        ? { ...state, number: state.count !== 1 ? state.count - 1 : 1}
         : state
       )
     },

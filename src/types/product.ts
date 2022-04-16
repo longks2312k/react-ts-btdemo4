@@ -12,5 +12,5 @@ export interface BillsResponse {
     id: React.Key;
     product_name: string;
     piece:number;
-    number: number;
+    count: number;
 }

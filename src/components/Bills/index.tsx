@@ -1,18 +1,70 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Row, Col, Button } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getPaymentSelector, remotePayment, upNumberPayment, reduceNumberPayment } from "../PaymentTable/paymentSlice";
+import { useAppDispatch } from "../../store/hooks";
+import {  PaymentState } from "../PaymentTable/paymentSlice";
 import { CloseOutlined, MinusCircleFilled, PlusCircleFilled } from "@ant-design/icons";
 
 const Bills = () => {
   const { itemColor } = useContext(ThemeContext);
   const dispatch = useAppDispatch();
-  const payment = useAppSelector(getPaymentSelector);
+  // const payment = useAppSelector(getPaymentSelector);
 
-  const totalMoney = payment.reduce((acc, ele) => acc + Number(ele.piece) * ele.number , 0)
-  const totalItem = payment.reduce((acc, ele) => acc + ele.number, 0)
+  const [payment, setPayment] = useState<Array<PaymentState>>([])
+  const [reset ,setReset] = useState(1);
+  useEffect(() => {
+    const localStore = localStorage.getItem("addToCart");
+    if (localStore) {
+      setPayment(JSON.parse(localStore));
+    }
+  },[reset])
+
+  // ham tinh tong
+  const totalMoney = payment.reduce((acc, ele) => acc + Number(ele.piece) * ele.count , 0)
+  const totalItem = payment.reduce((acc, ele) => acc + ele.count, 0)
+
+  // tang sp
+  const upNumberPayment = (item: PaymentState) => {
+    const findIndex = payment.findIndex((e: PaymentState) => e.id === item.id)
+    if (findIndex > -1) {
+      payment.map((e: PaymentState) => {
+        if(e.id === item.id) {
+          e.count += 1;
+        }
+        return e
+      });
+      localStorage.setItem("addToCart", JSON.stringify(payment));
+    }
+    setReset(reset + 1);
+  }
+
+  // giam sp
+  const reduceNumberPayment = (item: PaymentState) => {
+    const findIndex = payment.findIndex((e: PaymentState) => e.id === item.id)
+    if (findIndex > -1) {
+      payment.map((e: PaymentState) => {
+        if(e.id === item.id) {
+          if(e.count > 1) {
+            e.count -= 1;
+          }
+        }
+        return e
+      });
+      localStorage.setItem("addToCart", JSON.stringify(payment));
+    }
+    setReset(reset + 1);
+  }
+
+  // xoa sp
+  const remotePayment = (item: PaymentState) => {
+    const findIndex = payment.findIndex((e: PaymentState) => e.id === item.id)
+    if (findIndex > -1) {
+      const newPayment = payment.filter((e: PaymentState) => e.id !== item.id);
+      localStorage.setItem("addToCart", JSON.stringify(newPayment));
+    }
+    setReset(reset + 1);
+  }
 
   return (
     <div className="bill-payment" style={{ backgroundColor: `${itemColor}` }}>
@@ -38,22 +90,18 @@ const Bills = () => {
               <Button
                 className="bill-add-btn"
                 type="text"
-                onClick={() => {
-                  dispatch(upNumberPayment(item.id))
-                }}
+                onClick={() => upNumberPayment(item)}
                 icon={<PlusCircleFilled className="bill-add-icon" />}
               ></Button>
             </Col>
             <Col style={{ height: "20%"}}>
-              <h1>Số lượng: {item.number}</h1>
+              <h1>Số lượng: {item.count}</h1>
             </Col>
             <Col style={{ height: "40%"}}>
             <Button
                 className="bill-add-btn"
                 type="text"
-                onClick={() => {
-                  dispatch(reduceNumberPayment(item.id))
-                }}
+                onClick={() => reduceNumberPayment(item)}
                 icon={<MinusCircleFilled className="bill-add-icon" />}
               ></Button>
             </Col>
@@ -62,9 +110,7 @@ const Bills = () => {
           <Button
                 className="bill-close-btn"
                 type="text"
-                onClick={() => {
-                  dispatch(remotePayment(item.id));
-                }}
+                onClick={() => remotePayment(item)}
                 icon={<CloseOutlined className="bill-close-icon" />}
               ></Button>
           </Col>

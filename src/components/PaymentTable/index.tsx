@@ -2,12 +2,11 @@ import React, { useContext, useEffect } from "react";
 import { Row, Col, Button, Space } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { getBillProduct, getProducts } from "./thunk";
+import {  getProducts } from "./thunk";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { listProductsSelector } from "./slice";
 import { PlusCircleFilled } from "@ant-design/icons";
-import { addPayment } from "./paymentSlice";
-import { json } from "stream/consumers";
+import { BillsResponse, ProductResponse } from "../../types";
 
 const PaymentTable = () => {
   const { itemColor } = useContext(ThemeContext);
@@ -17,6 +16,35 @@ const PaymentTable = () => {
   useEffect(() => {
     dispatch(getProducts(true));
   }, [dispatch]);
+
+  const addClick = (item: ProductResponse) => {
+    const array = {
+      id: item.id,
+      name: item.product_name,
+      piece: item.piece,
+      image: item.image,
+      count: 1,
+    };
+    const array2 = localStorage.getItem("addToCart");
+    if (!array2) {
+      localStorage.setItem("addToCart", JSON.stringify([array]));
+    } else {
+      const array3 = JSON.parse(array2);
+      const findIndex = array3.findIndex((e: BillsResponse) => e.id === item.id)
+      if( findIndex === -1 ) {
+        array3.push(array)
+      } else {
+        // tăng count
+        array3.map((e: BillsResponse) => {
+          if(e.id === item.id) {
+            e.count += 1;
+          }
+          return e
+        });
+      }
+      localStorage.setItem("addToCart", JSON.stringify(array3));
+    }
+  }
 
   return (
     <div className="table-payment" style={{ backgroundColor: `${itemColor}` }}>
@@ -41,39 +69,7 @@ const PaymentTable = () => {
               <Button
                 className="table-add-btn"
                 type="text"
-                onClick={() => {
-                  const array = {
-                    id: item.id,
-                    product_name: item.product_name,
-                    piece: item.piece,
-                    count: 1,
-                  };
-                  const array2 = localStorage.getItem("addToCart");
-                  if (!array2) {
-                    localStorage.setItem("addToCart", JSON.stringify([array]));
-                  } else {
-                    const array3 = JSON.parse(array2);
-                    array3.push(array);
-                    localStorage.setItem("addToCart", JSON.stringify(array3));
-                  }
-                  // dispatch(
-                  //   addPayment({
-                  //     id: item.id,
-                  //     name: item.product_name,
-                  //     image: item.image,
-                  //     piece: item.piece,
-                  //     number: 1,
-                  //   })
-                  // );
-                  // dispatch(
-                  //   getBillProduct({
-                  //     id: item.id,
-                  //     product_name: item.product_name,
-                  //     piece: item.piece,
-                  //     number: 1,
-                  //   })
-                  // );
-                }}
+                onClick={() => addClick(item)}
                 icon={<PlusCircleFilled className="table-add-icon" />}
               ></Button>
             </Col>
