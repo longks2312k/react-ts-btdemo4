@@ -9,7 +9,9 @@ const Bills = () => {
   const { itemColor } = useContext(ThemeContext);
 
   const [payment, setPayment] = useState<Array<PaymentState>>([])
+  const [upDown ,setUpDown] = useState<boolean>();
   const [reset ,setReset] = useState(1);
+  //get list sp từ localStorage
   useEffect(() => {
     const localStore = localStorage.getItem("addToCart");
     if (localStore) {
@@ -17,33 +19,24 @@ const Bills = () => {
     }
   },[reset])
 
-  // ham tinh tong
+  // hàm tính tổng
   const totalMoney = payment.reduce((acc, ele) => acc + Number(ele.piece) * ele.count , 0)
   const totalItem = payment.reduce((acc, ele) => acc + ele.count, 0)
 
-  // tang sp
-  const upNumberPayment = (item: PaymentState) => {
+  // tăng giảm sp
+  const changeNumberPayment = (item: PaymentState) => {
     const findIndex = payment.findIndex((e: PaymentState) => e.id === item.id)
     if (findIndex > -1) {
       payment.map((e: PaymentState) => {
-        if(e.id === item.id) {
-          e.count += 1;
-        }
-        return e
-      });
-      localStorage.setItem("addToCart", JSON.stringify(payment));
-    }
-    setReset(reset + 1);
-  }
-
-  // giam sp
-  const reduceNumberPayment = (item: PaymentState) => {
-    const findIndex = payment.findIndex((e: PaymentState) => e.id === item.id)
-    if (findIndex > -1) {
-      payment.map((e: PaymentState) => {
-        if(e.id === item.id) {
-          if(e.count > 1) {
-            e.count -= 1;
+        if ( upDown === true ) {
+          if(e.id === item.id) {
+            e.count += 1;
+          }
+        } else if ( upDown === false ) {
+          if(e.id === item.id) {
+            if(e.count > 1) {
+              e.count -= 1;
+            }
           }
         }
         return e
@@ -53,7 +46,7 @@ const Bills = () => {
     setReset(reset + 1);
   }
 
-  // xoa sp
+  // xóa sp
   const remotePayment = (item: PaymentState) => {
     const findIndex = payment.findIndex((e: PaymentState) => e.id === item.id)
     if (findIndex > -1) {
@@ -87,7 +80,10 @@ const Bills = () => {
               <Button
                 className="bill-add-btn"
                 type="text"
-                onClick={() => upNumberPayment(item)}
+                onClick={() => {
+                  setUpDown(true)
+                  changeNumberPayment(item)
+                }}
                 icon={<PlusCircleFilled className="bill-add-icon" />}
               ></Button>
             </Col>
@@ -98,7 +94,10 @@ const Bills = () => {
             <Button
                 className="bill-add-btn"
                 type="text"
-                onClick={() => reduceNumberPayment(item)}
+                onClick={() => {
+                  setUpDown(false)
+                  changeNumberPayment(item)
+                }}
                 icon={<MinusCircleFilled className="bill-add-icon" />}
               ></Button>
             </Col>

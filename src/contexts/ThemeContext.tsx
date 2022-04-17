@@ -1,4 +1,3 @@
-import { PropTypes } from "@material-ui/core";
 import React, { createContext, ReactNode, useState } from "react";
 
 interface ThemeContextProps{
