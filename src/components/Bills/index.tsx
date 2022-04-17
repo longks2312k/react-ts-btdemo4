@@ -8,8 +8,7 @@ import { CloseOutlined, MinusCircleFilled, PlusCircleFilled } from "@ant-design/
 const Bills = () => {
   const { itemColor } = useContext(ThemeContext);
 
-  const [payment, setPayment] = useState<Array<PaymentState>>([])
-  const [upDown ,setUpDown] = useState<boolean>();
+  const [payment, setPayment] = useState<Array<PaymentState>>([]);
   const [reset ,setReset] = useState(1);
   //get list sp từ localStorage
   useEffect(() => {
@@ -24,15 +23,15 @@ const Bills = () => {
   const totalItem = payment.reduce((acc, ele) => acc + ele.count, 0)
 
   // tăng giảm sp
-  const changeNumberPayment = (item: PaymentState) => {
+  const changeNumberPayment = (item: PaymentState, type: string) => {
     const findIndex = payment.findIndex((e: PaymentState) => e.id === item.id)
     if (findIndex > -1) {
       payment.map((e: PaymentState) => {
-        if ( upDown === true ) {
+        if ( type === 'increase' ) {
           if(e.id === item.id) {
             e.count += 1;
           }
-        } else if ( upDown === false ) {
+        } else if ( type === 'decrease' ) {
           if(e.id === item.id) {
             if(e.count > 1) {
               e.count -= 1;
@@ -81,8 +80,7 @@ const Bills = () => {
                 className="bill-add-btn"
                 type="text"
                 onClick={() => {
-                  setUpDown(true)
-                  changeNumberPayment(item)
+                  changeNumberPayment(item,'increase')
                 }}
                 icon={<PlusCircleFilled className="bill-add-icon" />}
               ></Button>
@@ -95,8 +93,7 @@ const Bills = () => {
                 className="bill-add-btn"
                 type="text"
                 onClick={() => {
-                  setUpDown(false)
-                  changeNumberPayment(item)
+                  changeNumberPayment(item, 'decrease')
                 }}
                 icon={<MinusCircleFilled className="bill-add-icon" />}
               ></Button>
