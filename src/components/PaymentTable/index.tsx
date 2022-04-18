@@ -6,7 +6,7 @@ import {  getProducts } from "./thunk";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { listProductsSelector } from "./slice";
 import { PlusCircleFilled } from "@ant-design/icons";
-import { BillsResponse, ProductResponse } from "../../types";
+import { BillsArray, BillsResponse, ProductResponse } from "../../types";
 
 const PaymentTable = () => {
   const { itemColor } = useContext(ThemeContext);
@@ -30,12 +30,12 @@ const PaymentTable = () => {
       localStorage.setItem("addToCart", JSON.stringify([array]));
     } else {
       const array3 = JSON.parse(array2);
-      const findIndex = array3.findIndex((e: BillsResponse) => e.id === item.id)
+      const findIndex = array3.findIndex((e: BillsArray) => e.id === item.id)
       if( findIndex === -1 ) {
         array3.push(array)
       } else {
         // tăng count
-        array3.map((e: BillsResponse) => {
+        array3.map((e: BillsArray) => {
           if(e.id === item.id) {
             e.count += 1;
           }

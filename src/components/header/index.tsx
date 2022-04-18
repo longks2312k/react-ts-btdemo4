@@ -82,41 +82,40 @@ const Header = () => {
   return (
     <div className="header" style={{backgroundColor:`${bgrColor}`}}>
       <div className="mobile-menu">
-            <Button type="text"  icon={<MenuUnfoldOutlined style={{color:`${textColor}`}}/>} onClick={showDrawer} style={{ marginTop:'20px' }}>
-              
-            </Button>
-            <Drawer placement="left" visible={collapsed} onClose={onClose} width={220}>
-              <Menu
-                defaultSelectedKeys={['1']}
-                mode="inline"
-                theme="light"
-              >
-                <Menu.Item key="1" icon={<PieChartFilled />}>
-                  Option 1
-                </Menu.Item>
-                <Menu.Item key="2" icon={<DesktopOutlined />}>
-                  Option 2
-                </Menu.Item>
-                <Menu.Item key="3" icon={<ContainerFilled />}>
-                  Option 3
-                </Menu.Item>
-                <SubMenu key="sub1" icon={<MailFilled />} title="Navigation One">
-                  <Menu.Item key="5">Option 5</Menu.Item>
-                  <Menu.Item key="6">Option 6</Menu.Item>
-                  <Menu.Item key="7">Option 7</Menu.Item>
-                  <Menu.Item key="8">Option 8</Menu.Item>
-                </SubMenu>
-                <SubMenu key="sub2" icon={<AppstoreFilled />} title="Navigation Two">
-                  <Menu.Item key="9">Option 9</Menu.Item>
-                  <Menu.Item key="10">Option 10</Menu.Item>
-                  <SubMenu key="sub3" title="Submenu">
-                    <Menu.Item key="11">Option 11</Menu.Item>
-                    <Menu.Item key="12">Option 12</Menu.Item>
-                  </SubMenu>
-                </SubMenu>
-              </Menu>
-            </Drawer>
-          </div>
+        <Button type="text"  icon={<MenuUnfoldOutlined style={{color:`${textColor}`}}/>} onClick={showDrawer} style={{ marginTop:'20px' }}>
+        </Button>
+        <Drawer placement="left" visible={collapsed} onClose={onClose} width={220}>
+          <Menu
+            defaultSelectedKeys={['1']}
+            mode="inline"
+            theme="light"
+          >
+            <Menu.Item key="1" icon={<PieChartFilled />}>
+              Option 1
+            </Menu.Item>
+            <Menu.Item key="2" icon={<DesktopOutlined />}>
+              Option 2
+            </Menu.Item>
+            <Menu.Item key="3" icon={<ContainerFilled />}>
+              Option 3
+            </Menu.Item>
+            <SubMenu key="sub1" icon={<MailFilled />} title="Navigation One">
+              <Menu.Item key="5">Option 5</Menu.Item>
+              <Menu.Item key="6">Option 6</Menu.Item>
+              <Menu.Item key="7">Option 7</Menu.Item>
+              <Menu.Item key="8">Option 8</Menu.Item>
+            </SubMenu>
+            <SubMenu key="sub2" icon={<AppstoreFilled />} title="Navigation Two">
+              <Menu.Item key="9">Option 9</Menu.Item>
+              <Menu.Item key="10">Option 10</Menu.Item>
+              <SubMenu key="sub3" title="Submenu">
+                <Menu.Item key="11">Option 11</Menu.Item>
+                <Menu.Item key="12">Option 12</Menu.Item>
+              </SubMenu>
+            </SubMenu>
+          </Menu>
+        </Drawer>
+      </div>
       <div className="header-container">
         <div className="header-container-left">
           <div className="header-container-logo">
@@ -232,8 +231,6 @@ const Header = () => {
         </div>
       </div>
       <Menu
-        // onClick={handleClick(e.key)}
-        //selectedKeys={[current]}
         mode="horizontal"
         theme="dark"
         className="header-menu"

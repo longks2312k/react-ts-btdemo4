@@ -9,8 +9,15 @@ export interface ProductResponse {
     title: string;
 }
 export interface BillsResponse {
-    id: React.Key;
-    product_name: string;
-    piece:number;
+    customerName: string;
+    totalPiece:number;
+    bills: Array<BillsArray>;
+}
+
+export interface BillsArray {
+    id: number;
+    name: string;
+    piece: number
+    image: string;
     count: number;
 }

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getBills, getProductService } from "../../services";
+import { postBills, getProductService } from "../../services";
 import { BillsResponse, ProductResponse } from "../../types";
 
 export const getProducts = createAsyncThunk<ProductResponse[], boolean>('products/getProducts', async () => {
@@ -8,8 +8,8 @@ export const getProducts = createAsyncThunk<ProductResponse[], boolean>('product
     return response.data;
 });
 
-export const getBillProduct = createAsyncThunk<BillsResponse[], BillsResponse>('products/addProductToBills', async (params) => {
-    const response = await getBills(params);
+export const postBillProduct = createAsyncThunk<BillsResponse[], BillsResponse>('products/addProductToBills', async (params) => {
+    const response = await postBills(params);
     console.log('resp', response.data);
     return response.data;
 });

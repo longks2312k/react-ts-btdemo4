@@ -1,7 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store/store";
 import { BillsResponse } from "../../types";
-import { getBillProduct } from "./thunk";
+import { postBillProduct } from "./thunk";
 
 
 interface InitBills {
@@ -21,7 +21,7 @@ interface InitBills {
     extraReducers: (builder) => {
       builder
         .addCase(
-            getBillProduct.fulfilled,
+            postBillProduct.fulfilled,
           (state, action: PayloadAction<Array<BillsResponse>>) => {
             return {
               ...state,
@@ -30,13 +30,13 @@ interface InitBills {
             };
           }
         )
-        .addCase(getBillProduct.pending, (state) => {
+        .addCase(postBillProduct.pending, (state) => {
           return {
             ...state,
             loading: true,
           }
         })
-        .addCase(getBillProduct.rejected, (state) => {
+        .addCase(postBillProduct.rejected, (state) => {
           return state
         })
         .addCase
