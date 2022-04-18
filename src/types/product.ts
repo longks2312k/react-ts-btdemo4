@@ -11,7 +11,7 @@ export interface ProductResponse {
 export interface BillsResponse {
     customerName: string;
     totalPiece:number;
-    bills: Array<BillsArray>;
+    bill: Array<BillsArray>;
 }
 
 export interface BillsArray {

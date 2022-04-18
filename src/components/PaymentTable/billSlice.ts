@@ -5,13 +5,15 @@ import { postBillProduct } from "./thunk";
 
 
 interface InitBills {
-    bills: Array<BillsResponse>;
-    loading: boolean;
+    bills: BillsResponse;
   }
   
   const initialState: InitBills = {
-    bills: [],
-    loading: false,
+    bills: {
+      customerName: '',
+      totalPiece: 0,
+      bill: [],
+    },
   };
 
   export const billsSlice = createSlice({
@@ -22,35 +24,15 @@ interface InitBills {
       builder
         .addCase(
             postBillProduct.fulfilled,
-          (state, action: PayloadAction<Array<BillsResponse>>) => {
+          (state, action: any) => {
             return {
               ...state,
               bills: action.payload,
-              loading: false,
             };
           }
         )
-        .addCase(postBillProduct.pending, (state) => {
-          return {
-            ...state,
-            loading: true,
-          }
-        })
-        .addCase(postBillProduct.rejected, (state) => {
-          return state
-        })
-        .addCase
     },
   });
-  
-  export const billsSelector = (state: RootState) => state.bills;
-  
-  export const listBillsSelector = createSelector(
-    billsSelector,
-    (bills) => {
-      return bills;
-    }
-  );
   
   export default billsSlice.reducer;
   

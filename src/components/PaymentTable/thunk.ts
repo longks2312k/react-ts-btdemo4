@@ -10,6 +10,5 @@ export const getProducts = createAsyncThunk<ProductResponse[], boolean>('product
 
 export const postBillProduct = createAsyncThunk<BillsResponse[], BillsResponse>('products/addProductToBills', async (params) => {
     const response = await postBills(params);
-    console.log('resp', response.data);
     return response.data;
 });

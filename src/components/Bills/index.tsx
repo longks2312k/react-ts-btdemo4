@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useLayoutEffect, useState } from "react";
+import React, { useContext, useEffect,  useState } from "react";
 import { Row, Col, Button, Space } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../store/hooks";
+import { postBillProduct } from "../PaymentTable/thunk";
 
 const Bills = () => {
   const { itemColor, textColor } = useContext(ThemeContext);
@@ -69,6 +70,13 @@ const Bills = () => {
     setPayment([]);
   };
 
+  // thanh toan
+  const onPostBill = () => {
+    dispatch(postBillProduct({totalPiece: totalMoney,bill: payment, customerName: 'Long'}))
+    localStorage.removeItem("addToCart");
+    setPayment([]);
+  }
+
   return (
     <div className="bill-payment" style={{ backgroundColor: `${itemColor}` }}>
       <Row>
@@ -91,7 +99,7 @@ const Bills = () => {
                 Remote All
               </Button>
             )}
-            <Button type="primary" className="bill-remote-btn">
+            <Button type="primary" className="bill-remote-btn" onClick={onPostBill}>
               Add Bill
             </Button>
           </Space>
