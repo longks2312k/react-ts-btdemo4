@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useLayoutEffect, useState } from "react";
 import { Row, Col, Button, Space } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -16,13 +16,15 @@ const Bills = () => {
   const dispatch = useAppDispatch();
 
   const [payment, setPayment] = useState<Array<PaymentState>>([]);
+  const [reset, setReset] = useState(0)
+
   //get list sp từ localStorage
   useEffect(() => {
     const localStore = localStorage.getItem("addToCart");
     if (localStore) {
       setPayment(JSON.parse(localStore));
     }
-  }, [payment]);
+  }, [reset]);
 
   // hàm tính tổng
   const totalMoney = payment.reduce(
@@ -48,6 +50,7 @@ const Bills = () => {
       }
       localStorage.setItem("addToCart", JSON.stringify(payment));
     }
+    setReset(reset +1);
   };
 
   // xóa sp
@@ -57,6 +60,7 @@ const Bills = () => {
       const newPayment = payment.filter((e: PaymentState) => e.id !== item.id);
       localStorage.setItem("addToCart", JSON.stringify(newPayment));
     }
+    setReset(reset +1);
   };
 
   // xóa toàn bộ sp
