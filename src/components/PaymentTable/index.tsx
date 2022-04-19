@@ -44,6 +44,7 @@ const PaymentTable = () => {
       }
       localStorage.setItem("addToCart", JSON.stringify(array3));
     }
+    alert(`Đã thêm ${item.product_name} vào giỏ hàng!`)
   }
 
   return (

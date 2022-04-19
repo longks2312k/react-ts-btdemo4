@@ -74,6 +74,7 @@ const Bills = () => {
   const onPostBill = () => {
     dispatch(postBillProduct({totalPiece: totalMoney,bill: payment, customerName: 'Long'}))
     localStorage.removeItem("addToCart");
+    alert(`Đã thêm hóa đơm!`)
     setPayment([]);
   }
 
