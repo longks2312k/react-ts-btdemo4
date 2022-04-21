@@ -88,6 +88,7 @@ const Bills = () => {
     localStorage.removeItem("addToCart");
     alert(`Đã thêm hóa đơm!`)
     setPayment([]);
+    setIsModalVisible(false);
   }
 
   return (
