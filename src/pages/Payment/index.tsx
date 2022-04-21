@@ -10,7 +10,7 @@ const Payment = () => {
     return (
         <div style={{backgroundColor:`${bgrColor}`}}>
             <Header/>
-            <Bills/>
+            <Bills />
             <Footer/>
         </div>
     );
