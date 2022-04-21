@@ -11,6 +11,7 @@ interface InitBills {
   const initialState: InitBills = {
     bills: {
       customerName: '',
+      address: '',
       totalPiece: 0,
       bill: [],
     },

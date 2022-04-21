@@ -1,5 +1,5 @@
 import React, { useContext, useEffect,  useState } from "react";
-import { Row, Col, Button, Space } from "antd";
+import { Row, Col, Button, Space, Modal, Input } from "antd";
 import "./style.css";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { PaymentState } from "../PaymentTable/paymentSlice";
@@ -18,6 +18,18 @@ const Bills = () => {
 
   const [payment, setPayment] = useState<Array<PaymentState>>([]);
   const [reset, setReset] = useState(0)
+  const [name, setName] = useState('')
+  const [address, setAddress] = useState('')
+
+  // Modal
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const handleOpenModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   //get list sp từ localStorage
   useEffect(() => {
@@ -72,7 +84,7 @@ const Bills = () => {
 
   // thanh toan
   const onPostBill = () => {
-    dispatch(postBillProduct({totalPiece: totalMoney,bill: payment, customerName: 'Long'}))
+    dispatch(postBillProduct({totalPiece: totalMoney,bill: payment, customerName: name, address: address}))
     localStorage.removeItem("addToCart");
     alert(`Đã thêm hóa đơm!`)
     setPayment([]);
@@ -100,9 +112,38 @@ const Bills = () => {
                 Remote All
               </Button>
             )}
-            <Button type="primary" className="bill-remote-btn" onClick={onPostBill}>
+            <Button type="primary" className="bill-remote-btn" onClick={handleOpenModal}>
               Add Bill
             </Button>
+            {/* Modal */}
+            <Modal
+              title="Add New Product"
+              visible={isModalVisible}
+              footer={null}
+              onCancel={handleCancel}
+            >
+              <div className="input-text">
+                <Input
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Customer Name"
+                  type="text"
+                  className="ant-input"
+                />
+              </div>
+              <div className="input-text">
+                <Input
+                  onChange={(e) => setAddress(e.target.value)}
+                  placeholder="Address"
+                  type="text"
+                  className="ant-input"
+                />
+              </div>
+              <div className="div-button">
+                <Button onClick={onPostBill} className="btn-add-modal" type="primary">
+                  Add Bill
+                </Button>
+              </div>
+            </Modal>
           </Space>
         </Col>
       </Row>

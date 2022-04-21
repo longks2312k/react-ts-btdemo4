@@ -10,6 +10,7 @@ export interface ProductResponse {
 }
 export interface BillsResponse {
     customerName: string;
+    address: string;
     totalPiece:number;
     bill: Array<BillsArray>;
 }

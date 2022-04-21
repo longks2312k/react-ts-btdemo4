@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 import Payment from './pages/Payment';
 import ThemeContextProvider from './contexts/ThemeContext';
 import { Route, Routes } from 'react-router-dom';
+import Baitap from './pages/lambt';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/tables' element={<Payment/>}/>
         </Routes>
       </ThemeContextProvider>
+      {/* <Baitap/> */}
     </div>
   );
 }
