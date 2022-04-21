@@ -20,3 +20,11 @@ export const postBills = (data: BillsResponse): AxiosPromise<BillsResponse[]> =>
     };
     return instance(request);
 };
+
+export const getBills = (): AxiosPromise<BillsResponse[]> => {
+    const request: AxiosRequestConfig = {
+        method: 'GET',
+        url: `${env.path_product}/bills`,
+    };
+    return instance(request);
+};
