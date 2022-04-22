@@ -45,14 +45,14 @@ const Header = () => {
   const menu = (
     <Menu>
       <Menu.Item>
-        <button onClick={changeLanguage("en")}>English</button>
+        <Button type="text" icon={<img className="btn-language-item" src="https://kenh14cdn.com/thumb_w/660/2017/2-1503128133740.png"/>} onClick={changeLanguage("en")}>English</Button>
       </Menu.Item>
       <Menu.Item>
-      <button onClick={changeLanguage("jp")}>Japan</button>
+      <Button type="text" icon={<img className="btn-language-item" src="https://nhatbanchotoinhe.com/wp-content/uploads/2021/04/co-nhat-4795-1497173124.png"/>} onClick={changeLanguage("jp")}>Japan</Button>
 
       </Menu.Item>
       <Menu.Item>
-      <button onClick={changeLanguage("ve")}>Vietnamese</button>
+      <Button type="text" icon={<img className="btn-language-item" src="https://fileth.hcm.edu.vn//UploadImages/thhoabinhq11/2021_11/quocky-1_291120211558.gif?w=400"/>} onClick={changeLanguage("ve")}>Vietnamese</Button>
 
       </Menu.Item>
     </Menu>
@@ -225,7 +225,7 @@ const Header = () => {
       >
         <SubMenu
           key="Dashboards"
-          title="Dashboards"
+          title={t("headerDashboards")}
           theme="light"
           icon={<CaretDownOutlined />}
         >
@@ -253,7 +253,7 @@ const Header = () => {
         </SubMenu>
         <SubMenu
           key="Components"
-          title="Components"
+          title={t("headerComponents")}
           theme="light"
           icon={<CaretDownOutlined />}
         >
@@ -304,7 +304,7 @@ const Header = () => {
         </SubMenu>
         <SubMenu
           key="Apps"
-          title="Apps"
+          title={t("headerApps")}
           theme="light"
           icon={<CaretDownOutlined />}
         >
@@ -326,7 +326,7 @@ const Header = () => {
         </SubMenu>
         <SubMenu
           key="Social"
-          title="Social Apps"
+          title={t("headerSocialApps")}
           theme="light"
           icon={<CaretDownOutlined />}
         >
@@ -339,7 +339,7 @@ const Header = () => {
         </SubMenu>
         <SubMenu
           key="Visualization"
-          title="Visualization"
+          title={t("headerVisualization")}
           theme="light"
           icon={<CaretDownOutlined />}
         >
@@ -358,7 +358,7 @@ const Header = () => {
         </SubMenu>
         <SubMenu
           key="Extras"
-          title="Extras"
+          title={t("headerExtras")}
           theme="light"
           icon={<CaretDownOutlined />}
         >
@@ -369,7 +369,7 @@ const Header = () => {
         </SubMenu>
         <SubMenu
           key="Extensions"
-          title="Extensions"
+          title={t("headerExtensions")}
           theme="light"
           icon={<CaretDownOutlined />}
         >

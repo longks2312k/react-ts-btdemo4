@@ -6,6 +6,11 @@
     padding: 0 110px;
     display: flex;
 }
+.btn-language-item{
+    height: 10px;
+    width: 15px;
+    margin-right: 5px;
+}
 .header-container-left{
     display: flex;
     width: 70%;

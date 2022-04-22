@@ -8,15 +8,18 @@ import {
 import { Space } from "antd";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
+import '../../../translations/i18n'
 import "./style.css";
 
 const About = () => {
   const { textColor, itemColor } = useContext(ThemeContext);
+  const { t } = useTranslation();
   return (
     <Space className="about" style={{backgroundColor: `${itemColor}` }}>
       <div className="about-title">
         <div className="about-name">
-          <h2 style={{color: `${textColor}`}}>About</h2>
+          <h2 style={{color: `${textColor}`}}>{t("about")}</h2>
         </div>
       </div>
       <div className="about-content">
@@ -26,7 +29,7 @@ const About = () => {
               <SwitcherFilled style={{color: `${textColor}`}} className="about-item-icon" />
             </div>
             <div className="about-item-title">
-              <p className="about-item-p" style={{color: `${textColor}`}}>Work at</p>
+              <p className="about-item-p" style={{color: `${textColor}`}}>{t("aboutWorkat")}</p>
               <p className="about-item-p2" style={{color: `${textColor}`}}>G-axon Tech Pvt. Ltd.</p>
             </div>
           </div>
@@ -35,7 +38,7 @@ const About = () => {
               <ContainerFilled className="about-item-icon" style={{color: `${textColor}`}}/>
             </div>
             <div className="about-item-title">
-              <p className="about-item-p" style={{color: `${textColor}`}}>Birthday</p>
+              <p className="about-item-p" style={{color: `${textColor}`}}>{t("aboutBirthday")}</p>
               <p className="about-item-p2" style={{color: `${textColor}`}}>Oct 25, 1994</p>
             </div>
           </div>
@@ -44,8 +47,8 @@ const About = () => {
               <ReadFilled className="about-item-icon" style={{color: `${textColor}`}}/>
             </div>
             <div className="about-item-title">
-              <p className="about-item-p" style={{color: `${textColor}`}}>Went to</p>
-              <p className="about-item-p2" style={{color: `${textColor}`}}>Oxford University</p>
+              <p className="about-item-p" style={{color: `${textColor}`}}>{t("aboutWentTo")}</p>
+              <p className="about-item-p2" style={{color: `${textColor}`}}>{t("aboutWentToTitle")}</p>
             </div>
           </div>
           <div className="about-item">
@@ -53,8 +56,8 @@ const About = () => {
               <FireFilled className="about-item-icon" style={{color: `${textColor}`}}/>
             </div>
             <div className="about-item-title">
-              <p className="about-item-p" style={{color: `${textColor}`}}>Lives in</p>
-              <p className="about-item-p2" style={{color: `${textColor}`}}>Switzerland</p>
+              <p className="about-item-p" style={{color: `${textColor}`}}>{t("aboutLiveIn")}</p>
+              <p className="about-item-p2" style={{color: `${textColor}`}}>{t("aboutLiveInTitle")}</p>
             </div>
           </div>
           <div className="about-item">
@@ -62,7 +65,7 @@ const About = () => {
               <TagsFilled className="about-item-icon" style={{color: `${textColor}`}}/>
             </div>
             <div className="about-item-title">
-              <p className="about-item-p" style={{color: `${textColor}`}}>3 Friends Members</p>
+              <p className="about-item-p" style={{color: `${textColor}`}}>{t("aboutFriends")}</p>
               <p className="about-item-p2" style={{color: `${textColor}`}}  >Long, Minh, Hung</p>
             </div>
           </div>
