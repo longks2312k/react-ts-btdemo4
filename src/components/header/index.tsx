@@ -28,49 +28,37 @@ import {
 } from "@ant-design/icons";
 import ThemeBtn from "./themeBtn";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
+import '../../translations/i18n'
 // import { click } from "@testing-library/user-event/dist/click";
 
 const { SubMenu } = Menu;
 
-const menu = (
-  <Menu>
-    <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        1st menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.aliyun.com"
-      >
-        2nd menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        3rd menu item
-      </a>
-    </Menu.Item>
-  </Menu>
-);
+
 
 const Header = () => {
-  //const [current, setCurrent] = useState("mail");
-  // handleClick = e => {
-  //   setCurrent(e.key);
-  // };
-  const {bgrColor,textColor,itemColor} = useContext(ThemeContext);
+  // Change language
+  const { t ,i18n} = useTranslation();
+  const changeLanguage = (language: string) => () => {
+    i18n.changeLanguage(language);
+  };
+  const menu = (
+    <Menu>
+      <Menu.Item>
+        <button onClick={changeLanguage("en")}>English</button>
+      </Menu.Item>
+      <Menu.Item>
+      <button onClick={changeLanguage("jp")}>Japan</button>
 
+      </Menu.Item>
+      <Menu.Item>
+      <button onClick={changeLanguage("ve")}>Vietnamese</button>
+
+      </Menu.Item>
+    </Menu>
+  );
+
+  const {bgrColor,textColor,itemColor} = useContext(ThemeContext);
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const showDrawer = () => {
     setCollapsed(true);
@@ -128,7 +116,7 @@ const Header = () => {
               // style={{backgroundColor:`${bgrColor}`}}
               allowClear={true}
               size="large"
-              placeholder="Search here..."
+              placeholder={t("headerSearchInput")}
               prefix={<SearchOutlined />}
             ></Input>
             <Dropdown
@@ -137,7 +125,7 @@ const Header = () => {
               overlay={menu}
               placement="bottomLeft"
             >
-              <Button style={{backgroundColor:`${itemColor}`,color:`${textColor}`}}>CATEGORIES</Button>
+              <Button style={{backgroundColor:`${itemColor}`,color:`${textColor}`}}>{t("headerCategory")}</Button>
             </Dropdown>
           </div>
         </div>
@@ -146,13 +134,13 @@ const Header = () => {
             <div className="login-div1"></div>
             <div className="login-div2">
               <Button type="text" className="btn-login">
-                <p className="text-btn" style={{color:`${textColor}`}}>LOGIN</p>
+                <p className="text-btn" style={{color:`${textColor}`}}>{t("headerLogin")}</p>
               </Button>
             </div>
             <div className="div-4"></div>
             <div className="login-div3">
               <Button type="text" className="btn-sign-up">
-                <p className="text-btn" style={{color:`${textColor}`}}>SIGN UP</p>
+                <p className="text-btn" style={{color:`${textColor}`}}>{t("headerSignup")}</p>
               </Button>
             </div>
             <ThemeBtn/>
