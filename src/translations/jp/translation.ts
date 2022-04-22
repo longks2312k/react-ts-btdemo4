@@ -25,7 +25,7 @@ export const TRANSLATIONS_JP = {
     biographytext2:"Augue mauris dignissim arcu、ut venenatis metus anteeuorci。 それはそれほど重要ではありませんし、それも範囲外です。 それぞれが常に素晴らしいもので飾られていますが、笑いと悲しみに耐えます。 人生の悲しみでさえ、メンバーの裏庭の化粧です。Mauris feugiat lectus felis、nec ullamcorper risuselementumat。 多分それは週末でした。 妊娠を恐れる必要はありません。 Phasellus sed odio eulacusvenenatis。",
     biographytext3:"からストレスや飲み物。 時々、彼の前、特に喉の空腹と信じられないほどの空腹。 しかし、猫からのみ。 痛み自体は愛、主な記憶システムです。 従業員の報酬は大丈夫ではありません。 ゲームのコースの暖かさのために、そして熱資金調達の恐れのための時間。 しかし、スーパーヒーローの望みの矢から、迷惑を止めるためだけに。 Pellentesque consequatleotortor。",
     contact:"Contact",
-    contactEmail:"Email",
+    contactEmail:"Eメール",
     contactWeb:"ウェブページ",
     contactPhone:"電話",
    };

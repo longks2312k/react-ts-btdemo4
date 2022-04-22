@@ -25,7 +25,7 @@ export const TRANSLATIONS_VE = {
     biographytext2:"Augue mauris dignissim arcu, ut venenatis metus ante eu orci. Nó không quan trọng lắm, cũng không phải, điều đó nằm ngoài giới hạn. Mỗi người luôn được trang hoàng với những điều tuyệt vời, nhưng mang tiếng cười và sự tang tóc. Ngay cả những vui buồn của cuộc sống cũng là sân sau trang điểm của các thành viên.Mauris feugiat lectus felis, ullamcorper risus elementum tại. Có lẽ đó là cuối tuần. Không cần sợ mang thai. Phasellus sed odio eu lacus venenatis.",
     biographytext3:"Căng thẳng hoặc uống rượu. Đôi khi cơn đói cồn cào ngay trước mắt, đặc quánh ở cổ họng. Nhưng chỉ từ con mèo. Nỗi đau chính là tình yêu, là hệ thống lưu trữ chính. Chế độ đãi ngộ của nhân viên là không ổn. Đối với sự ấm áp của quá trình trò chơi, và thời gian cho nỗi sợ hãi về tài chính nhiệt. Nhưng chỉ để ngăn chặn sự khó chịu, từ những mũi tên vào mong muốn của siêu anh hùng. Rùa đuôi chuột Pastyesqueequat leo.",
     contact:"Contact",
-    contactEmail:"Eメール",
+    contactEmail:"Email",
     contactWeb:"Trang web",
     contactPhone:"Điện thoại",
    };
