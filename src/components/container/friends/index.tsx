@@ -1,6 +1,7 @@
 import { Col, Row, Space,} from 'antd';
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../../contexts/ThemeContext';
+import { useTranslation } from "react-i18next";
 import './style.css'
 
 interface Product{
@@ -53,10 +54,12 @@ const productList = [
 
 const Friends = () => {
   const { textColor, itemColor } = useContext(ThemeContext);
+  const { t } = useTranslation();
+
     return (
         <div className='friend' style={{backgroundColor: `${itemColor}`}}>
             <div className="friend-Title">
-                <h2 style={{color: `${textColor}`}}>Friends</h2>
+                <h2 style={{color: `${textColor}`}}>{t("friends")}</h2>
             </div>
             <div className='list-item'>
               <Space wrap>

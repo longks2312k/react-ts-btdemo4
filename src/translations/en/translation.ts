@@ -28,4 +28,5 @@ export const TRANSLATIONS_EN = {
     contactEmail:"Email",
     contactWeb:"Web Page",
     contactPhone:"Phone",
+    friends:"Friends",
    };

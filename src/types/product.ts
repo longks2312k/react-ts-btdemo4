@@ -13,6 +13,7 @@ export interface BillsResponse {
     address: string;
     totalPiece:number;
     bill: Array<BillsArray>;
+    
 }
 
 export interface BillsArray {

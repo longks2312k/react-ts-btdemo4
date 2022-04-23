@@ -1,6 +1,9 @@
+import { AxiosResponse } from 'axios';
 import React, { useContext, useEffect, useState, FC } from 'react'
 import ReactApexChart from 'react-apexcharts';
 import { ThemeContext } from '../../contexts/ThemeContext'
+import { getBills } from '../../services';
+import { BillsResponse } from '../../types';
 import './style.css'
 
 type Props = {
@@ -10,36 +13,24 @@ type Props = {
 
 const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
   const { itemColor } = useContext(ThemeContext)
-  const [totalList,setTotalList] = useState([])
-  const [nameList,setNameList] = useState([])
+  const [data, setData] = useState<BillsResponse[]>()
+  const [totalList,setTotalList] = useState<Array<number>>([])
+  const [nameList,setNameList] = useState<Array<string>>([])
 
   useEffect(() => {
-    fetch('https://62577fc1c870a2149784f102.mockapi.io/api/v1/bills')
-    .then(response => response.json())
-    .then(data => {
-      const totalList = data.map((e: any) => e.totalPiece)
-      const name = data.map((e: any) => e.name)
-      setTotalList(totalList);
-      setNameList(name);
-    });
-  },[]);
-  
-  useEffect(() => {
-    if (!activeReq) {
-      return;
-    }
-    fetch('https://62577fc1c870a2149784f102.mockapi.io/api/v1/bills')
-    .then(response => response.json())
-    .then(data => {
-      if (data) {
-        setActiveReq(false);
+    const callGetProductList = async () => {
+      try {
+          const data = await getBills();
+          const total = data.data.map((e: BillsResponse) => e.totalPiece)
+          const name = data.data.map((e: BillsResponse) => e.customerName)
+          setTotalList(total);
+          setNameList(name);
+      } catch (error) {
+          console.error(error);
       }
-      const totalList = data.map((e: any) => e.totalPiece)
-      const name = data.map((e: any) => e.name)
-      setTotalList(totalList);
-      setNameList(name);
-    });
-  },[activeReq])
+    }
+    callGetProductList()
+  },[activeReq]);
 
   const series = [
     {
