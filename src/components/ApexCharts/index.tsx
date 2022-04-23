@@ -13,16 +13,15 @@ type Props = {
 
 const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
   const { itemColor } = useContext(ThemeContext)
-  const [data, setData] = useState<BillsResponse[]>()
   const [totalList,setTotalList] = useState<Array<number>>([])
   const [nameList,setNameList] = useState<Array<string>>([])
 
   useEffect(() => {
     const callGetProductList = async () => {
       try {
-          const data = await getBills();
-          const total = data.data.map((e: BillsResponse) => e.totalPiece)
-          const name = data.data.map((e: BillsResponse) => e.customerName)
+          const response = await getBills();
+          const total = response.data.map((e: BillsResponse) => e.totalPiece)
+          const name = response.data.map((e: BillsResponse) => e.customerName)
           setTotalList(total);
           setNameList(name);
       } catch (error) {
