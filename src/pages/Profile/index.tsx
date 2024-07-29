@@ -27,6 +27,7 @@ const Profile = () => {
     window.addEventListener("scroll", handleScroll);
 
     //cleanup fs
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
