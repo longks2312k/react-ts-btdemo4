@@ -1,4 +1,4 @@
-import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store/store";
 import { BillsResponse } from "../../types";
 import { getBillProduct, postBillProduct } from "./thunk";
@@ -21,11 +21,11 @@ interface InitBills {
     name: "bills",
     initialState,
     reducers: {},
-    extraReducers: (builder) => {
+    extraReducers: (builder: { addCase: (arg0: any, arg1: (state: any, action: any) => any) => { (): any; new(): any; addCase: { (arg0: any, arg1: (state: any, action: any) => any): void; new(): any; }; }; }) => {
       builder
         .addCase(
             postBillProduct.fulfilled,
-          (state, action: any) => {
+          (state: any, action: any) => {
             return {
               ...state,
               bills: action.payload,
@@ -34,7 +34,7 @@ interface InitBills {
         )
         .addCase(
           getBillProduct.fulfilled,
-          (state, action: any) => {
+          (state: any, action: any) => {
             return {
               ...state,
               bills: action.payload,

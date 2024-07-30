@@ -6,7 +6,7 @@ import {  getProducts } from "./thunk";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { listProductsSelector } from "./slice";
 import { PlusCircleFilled } from "@ant-design/icons";
-import { BillsArray, BillsResponse, ProductResponse } from "../../types";
+import { BillsArray, ProductResponse } from "../../types";
 
 const PaymentTable = () => {
   const { itemColor } = useContext(ThemeContext);
@@ -18,7 +18,7 @@ const PaymentTable = () => {
   }, [dispatch]);
 
   const addClick = (item: ProductResponse) => {
-    const array = {
+    const array: {id: React.key;name: string;piece: number;image: string; count: number} = {
       id: item.id,
       name: item.product_name,
       piece: item.piece,

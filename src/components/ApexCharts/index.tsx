@@ -1,4 +1,3 @@
-import { AxiosResponse } from 'axios';
 import React, { useContext, useEffect, useState, FC } from 'react'
 import ReactApexChart from 'react-apexcharts';
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -11,10 +10,12 @@ type Props = {
   setActiveReq: (active: boolean) => void;
 };
 
-const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
+const ApexCharts: FC<Props> = ({activeReq}) => {
   const { itemColor } = useContext(ThemeContext)
   const [totalList,setTotalList] = useState<Array<number>>([])
   const [nameList,setNameList] = useState<Array<string>>([])
+
+  console.log(nameList)
 
   useEffect(() => {
     const callGetProductList = async () => {
@@ -36,7 +37,18 @@ const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
       name: 'Total Piece',
       data: totalList
     }];
-  const options: any = {
+  const options: {
+    chart: {
+      height: number;
+      type: string;
+    },
+    dataLabels: {
+      enabled: boolean;
+    },
+    stroke: {
+      curve: string,
+    },
+  } = {
     chart: {
       height: 350,
       type: 'area'

@@ -42,6 +42,7 @@ const ModalBtn = () => {
   };
 
   const [searchText, setSearchText] = useState("");
+  //@typescript-eslint/no-explicit-any
   const onSearch = (e: any) => {
     setSearchText(e.target.value);
     dispatch(searchName(e.target.value));
