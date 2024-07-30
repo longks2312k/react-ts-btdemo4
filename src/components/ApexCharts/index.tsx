@@ -38,18 +38,7 @@ const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
       name: 'Total Piece',
       data: totalList
     }];
-  const options: {
-    chart: {
-      height: number;
-      type: string;
-    },
-    dataLabels: {
-      enabled: boolean;
-    },
-    stroke: {
-      curve: string,
-    },
-  } = {
+  const options: any = {
     chart: {
       height: 350,
       type: 'area'
