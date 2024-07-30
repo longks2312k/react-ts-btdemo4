@@ -18,7 +18,7 @@ const PaymentTable = () => {
   }, [dispatch]);
 
   const addClick = (item: ProductResponse) => {
-    const array: {id: React.key;name: string;piece: number;image: string; count: number} = {
+    const array = {
       id: item.id,
       name: item.product_name,
       piece: item.piece,

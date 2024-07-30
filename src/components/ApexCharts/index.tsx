@@ -10,7 +10,7 @@ type Props = {
   setActiveReq: (active: boolean) => void;
 };
 
-const ApexCharts: FC<Props> = ({activeReq}) => {
+const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
   const { itemColor } = useContext(ThemeContext)
   const [totalList,setTotalList] = useState<Array<number>>([])
   const [nameList,setNameList] = useState<Array<string>>([])
@@ -25,6 +25,7 @@ const ApexCharts: FC<Props> = ({activeReq}) => {
           const name = response.data.map((e: BillsResponse) => e.customerName)
           setTotalList(total);
           setNameList(name);
+          setActiveReq(true);
       } catch (error) {
           console.error(error);
       }
