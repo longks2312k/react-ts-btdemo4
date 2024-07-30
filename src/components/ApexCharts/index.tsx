@@ -1,4 +1,3 @@
-import { AxiosResponse } from 'axios';
 import React, { useContext, useEffect, useState, FC } from 'react'
 import ReactApexChart from 'react-apexcharts';
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -16,6 +15,8 @@ const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
   const [totalList,setTotalList] = useState<Array<number>>([])
   const [nameList,setNameList] = useState<Array<string>>([])
 
+  console.log(nameList)
+
   useEffect(() => {
     const callGetProductList = async () => {
       try {
@@ -24,6 +25,7 @@ const ApexCharts: FC<Props> = ({activeReq, setActiveReq}) => {
           const name = response.data.map((e: BillsResponse) => e.customerName)
           setTotalList(total);
           setNameList(name);
+          setActiveReq(true);
       } catch (error) {
           console.error(error);
       }

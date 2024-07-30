@@ -6,7 +6,7 @@ import {  getProducts } from "./thunk";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { listProductsSelector } from "./slice";
 import { PlusCircleFilled } from "@ant-design/icons";
-import { BillsArray, BillsResponse, ProductResponse } from "../../types";
+import { BillsArray, ProductResponse } from "../../types";
 
 const PaymentTable = () => {
   const { itemColor } = useContext(ThemeContext);
